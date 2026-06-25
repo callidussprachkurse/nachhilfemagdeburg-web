@@ -186,6 +186,18 @@ section{padding:108px 0}
 .mh-in{color:var(--forest)} .mh-in p{margin:6px 0 10px;font-family:'Inter';font-size:14px;font-weight:600}
 .map-load{font-family:'Inter';font-size:13.5px;font-weight:600;color:#fff;background:var(--forest);border:0;border-radius:8px;padding:8px 16px;cursor:pointer}
 .mh-note{display:block;margin-top:10px;font-size:11.5px;color:#65706A}
+.cookiebar{position:fixed;left:0;right:0;bottom:0;z-index:90;background:#fff;border-top:1px solid var(--line);box-shadow:0 -10px 30px rgba(20,40,35,.12)}
+.cookiebar[hidden]{display:none}
+.cookiebar-in{max-width:1160px;margin:0 auto;padding:18px 36px;display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.cookiebar-tx{flex:1;min-width:260px}
+.cookiebar-tx strong{font-family:'Fraunces',serif;font-weight:500;font-size:17px;color:var(--forest);display:block;margin-bottom:3px}
+.cookiebar-tx p{font-size:13px;color:var(--muted);line-height:1.5;margin:0}
+.cookiebar-tx a{color:var(--forest);text-decoration:underline}
+.cookiebar-btns{display:flex;gap:12px;flex-shrink:0}
+.cookiebar-btns button{font-family:'Inter';font-size:14px;font-weight:600;padding:11px 24px;border-radius:9px;cursor:pointer;border:1.5px solid var(--forest)}
+.ck-deny{background:#fff;color:var(--forest)}
+.ck-allow{background:var(--forest);color:#fff}
+@media(max-width:640px){.cookiebar-in{padding:15px 20px;gap:13px}.cookiebar-btns{width:100%}.cookiebar-btns button{flex:1;padding:12px}}
 .loc .bd{padding:28px 32px 32px}
 .loc h3{font-size:24px;font-weight:500}
 .loc .addr{color:var(--ink);font-size:15px;margin-top:6px}
@@ -574,7 +586,7 @@ footer .bot a:hover{color:#fff}
   <div class="wrap">
     <div class="locs">
       <div class="loc">
-        <iframe class="map" src="https://maps.google.com/maps?q=Harnackstra%C3%9Fe%205%2C%2039104%20Magdeburg&amp;z=16&amp;hl=de&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Standort Magdeburg auf Google Maps"></iframe>
+        <div class="map mapholder" data-src="https://maps.google.com/maps?q=Harnackstra%C3%9Fe%205%2C%2039104%20Magdeburg&amp;z=16&amp;hl=de&amp;output=embed" data-title="Standort Magdeburg auf Google Maps"><div class="mh-in"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-6.5-5.3-6.5-10A6.5 6.5 0 0 1 18.5 11c0 4.7-6.5 10-6.5 10Z"/><circle cx="12" cy="11" r="2.3"/></svg><p>Karte von Google Maps</p><button type="button" class="map-load">Karte anzeigen</button><span class="mh-note">Mit Klick werden Google Maps geladen und Daten an Google übertragen.</span></div></div>
         <div class="bd">
           <h3>Magdeburg</h3>
           <p class="addr">Harnackstraße 5 · 39104 Magdeburg</p>
@@ -585,7 +597,7 @@ footer .bot a:hover{color:#fff}
         </div>
       </div>
       <div class="loc">
-        <iframe class="map" src="https://maps.google.com/maps?q=Rog%C3%A4tzer%20Stra%C3%9Fe%2019%2C%2039326%20Wolmirstedt&amp;z=16&amp;hl=de&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Standort Wolmirstedt auf Google Maps"></iframe>
+        <div class="map mapholder" data-src="https://maps.google.com/maps?q=Rog%C3%A4tzer%20Stra%C3%9Fe%2019%2C%2039326%20Wolmirstedt&amp;z=16&amp;hl=de&amp;output=embed" data-title="Standort Wolmirstedt auf Google Maps"><div class="mh-in"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-6.5-5.3-6.5-10A6.5 6.5 0 0 1 18.5 11c0 4.7-6.5 10-6.5 10Z"/><circle cx="12" cy="11" r="2.3"/></svg><p>Karte von Google Maps</p><button type="button" class="map-load">Karte anzeigen</button><span class="mh-note">Mit Klick werden Google Maps geladen und Daten an Google übertragen.</span></div></div>
         <div class="bd">
           <h3>Wolmirstedt</h3>
           <p class="addr">Rogätzer Straße 19 · 39326 Wolmirstedt</p>
@@ -657,7 +669,7 @@ footer .bot a:hover{color:#fff}
       <a href="mailto:info@callidus-magdeburg.de">✉ info@callidus-magdeburg.de</a>
       <a href="https://instagram.com/callidus_nachhilfe_magdeburg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="15" height="15" style="vertical-align:-2px"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/></svg> Instagram</a>
     </div>
-    <div class="bot">Nachhilfe in Magdeburg und Wolmirstedt · seit 2019 · <a href="#" data-legal="imp">Impressum</a> · <a href="#" data-legal="ds">Datenschutz</a> · <a href="#" data-legal="agb">AGB</a> · <a href="#" data-legal="wr">Widerrufsbelehrung</a></div>
+    <div class="bot">Nachhilfe in Magdeburg und Wolmirstedt · seit 2019 · <a href="#" data-legal="imp">Impressum</a> · <a href="#" data-legal="ds">Datenschutz</a> · <a href="#" data-legal="agb">AGB</a> · <a href="#" data-legal="wr">Widerrufsbelehrung</a> · <a href="#" id="cookie-settings">Cookie-Einstellungen</a></div>
   </div>
 </footer>
 
@@ -1016,6 +1028,49 @@ footer .bot a:hover{color:#fff}
   ov.addEventListener('mousedown', function(e){ if(e.target===ov) close(); });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape' && ov.classList.contains('open')) close(); });
 }());
+</script>
+<div class="cookiebar" id="cookiebar" role="dialog" aria-label="Hinweis zu Karten und externen Inhalten" hidden>
+  <div class="cookiebar-in">
+    <div class="cookiebar-tx">
+      <strong>Karten &amp; externe Inhalte</strong>
+      <p>Zur Anzeige unserer Standorte binden wir <b>Google Maps</b> ein. Beim Laden werden Daten (u.&nbsp;a. Ihre IP-Adresse) an Google übertragen. Sie entscheiden, ob das erlaubt sein soll — Ihre Wahl gilt nur für die Karten und ist jederzeit über „Cookie-Einstellungen" in der Fußzeile änderbar. Mehr in den <a href="#" data-legal="ds">Datenschutzhinweisen</a>.</p>
+    </div>
+    <div class="cookiebar-btns">
+      <button type="button" class="ck-deny" id="ck-deny">Ablehnen</button>
+      <button type="button" class="ck-allow" id="ck-allow">Akzeptieren</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY='callidus_maps_consent';
+  var bar=document.getElementById('cookiebar');
+  function getC(){ try{return localStorage.getItem(KEY);}catch(e){return null;} }
+  function setC(v){ try{localStorage.setItem(KEY,v);}catch(e){} }
+  function show(){ if(bar) bar.hidden=false; }
+  function hide(){ if(bar) bar.hidden=true; }
+  function loadMaps(){
+    document.querySelectorAll('.mapholder').forEach(function(h){
+      var f=document.createElement('iframe');
+      f.className='map'; f.src=h.getAttribute('data-src');
+      f.setAttribute('loading','lazy'); f.setAttribute('referrerpolicy','no-referrer-when-downgrade');
+      f.title=h.getAttribute('data-title')||'Karte'; f.frameBorder='0';
+      h.parentNode.replaceChild(f,h);
+    });
+  }
+  var c=getC();
+  if(c==='granted'){ loadMaps(); }
+  else if(c!=='denied'){ show(); }
+  var allow=document.getElementById('ck-allow'), deny=document.getElementById('ck-deny');
+  if(allow) allow.addEventListener('click',function(){ setC('granted'); hide(); loadMaps(); });
+  if(deny) deny.addEventListener('click',function(){ setC('denied'); hide(); if(document.querySelector('iframe.map')) location.reload(); });
+  document.addEventListener('click',function(e){
+    var h=e.target.closest ? e.target.closest('.mapholder') : null;
+    if(h){ setC('granted'); hide(); loadMaps(); }
+  });
+  var cs=document.getElementById('cookie-settings');
+  if(cs) cs.addEventListener('click',function(e){ e.preventDefault(); show(); });
+})();
 </script>
 
 </body>
