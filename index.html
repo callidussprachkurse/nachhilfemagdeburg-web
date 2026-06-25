@@ -281,6 +281,7 @@ footer .bot a:hover{color:#fff}
 /* MOTION */
 .is-reveal{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
 .is-reveal.in{opacity:1;transform:none}
+.steps .step.is-reveal{transition-duration:1s,1s}
 .ocard,.tcard{transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .4s ease,box-shadow .3s ease}
 .ocard:hover,.tcard:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
 @media(prefers-reduced-motion:reduce){.is-reveal{opacity:1!important;transform:none!important;transition:none!important}}
@@ -683,10 +684,10 @@ footer .bot a:hover{color:#fff}
     var sel='.rule,.ey,.sh,.lead2,.promise h2,.promise p,.ocard,.wcell,.step,.sub,.tcard,.loc,.hero h1,.hero .lead,.hero .cta,.hero .art,.why h2,.why .wsub';
     var els=document.querySelectorAll(sel);
     els.forEach(function(el){ el.classList.add('is-reveal'); });
-    ['.two','.wgrid','.steps','.subs','.testi','.locs'].forEach(function(gs){
-      document.querySelectorAll(gs).forEach(function(group){
+    [['.two',70],['.wgrid',70],['.steps',650],['.subs',70],['.testi',70],['.locs',70]].forEach(function(g){
+      document.querySelectorAll(g[0]).forEach(function(group){
         Array.prototype.forEach.call(group.children,function(child,i){
-          if(child.classList.contains('is-reveal')) child.style.transitionDelay=(i*70)+'ms';
+          if(child.classList.contains('is-reveal')) child.style.transitionDelay=(i*g[1])+'ms';
         });
       });
     });
