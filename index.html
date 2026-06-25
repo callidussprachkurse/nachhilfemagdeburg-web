@@ -59,6 +59,17 @@ nav .burger{display:none;background:none;border:0;color:var(--ink);font-size:25p
 .hero-logo{height:152px;width:auto;display:block;margin:0 0 24px}
 .hero .art .badge{position:absolute;left:-26px;bottom:34px;background:var(--ivory);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:19px 26px;display:flex;align-items:center;gap:17px;z-index:2}
 .hero .art .badge .st{color:var(--brass);font-size:18px;letter-spacing:2px;white-space:nowrap}
+.hero .art .badge .st span{display:inline-block;animation:starDance 1.9s ease-in-out infinite;will-change:transform}
+.hero .art .badge .st span:nth-child(1){animation-delay:0s}
+.hero .art .badge .st span:nth-child(2){animation-delay:.16s}
+.hero .art .badge .st span:nth-child(3){animation-delay:.32s}
+.hero .art .badge .st span:nth-child(4){animation-delay:.48s}
+.hero .art .badge .st span:nth-child(5){animation-delay:.64s}
+@keyframes starDance{
+  0%,52%,100%{transform:translateY(0) scale(1) rotate(0);color:var(--brass);text-shadow:none}
+  18%{transform:translateY(-7px) scale(1.32) rotate(-7deg);color:#C79A52;text-shadow:0 0 10px rgba(199,154,82,.85),0 0 4px rgba(255,244,214,.95)}
+}
+@media (prefers-reduced-motion:reduce){.hero .art .badge .st span{animation:none}}
 .hero .art .badge b{font-family:'Fraunces',serif;font-weight:500;font-size:20px;display:block;line-height:1.15}
 .hero .art .badge small{color:var(--muted);font-size:14px}
 
@@ -318,7 +329,7 @@ footer .bot a:hover{color:#fff}
     </div>
     <div class="art">
       <div class="pic ph" style="background-image:url('img/foto3.jpg');background-position:center 30%"></div>
-      <div class="badge"><div class="st">★★★★★</div><div><b>Eltern empfehlen uns</b><small>persönlich &amp; weiter</small></div></div>
+      <div class="badge"><div class="st"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><div><b>Eltern empfehlen uns</b><small>persönlich &amp; weiter</small></div></div>
     </div>
   </div>
 </header>
