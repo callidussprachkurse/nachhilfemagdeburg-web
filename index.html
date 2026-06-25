@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CALLIDUS — Nachhilfe in Magdeburg &amp; Wolmirstedt</title>
+
+
+<link rel="stylesheet" href="fonts.css">
+<style>
+:root{
+  --ink:#23302B;--muted:#65706A;--ivory:#F5F1E7;--ivory2:#ECE6D6;--card:#FBF8F0;
+  --forest:#1D4B46;--forest-deep:#143A36;--forest-soft:#E4EBE7;
+  --brass:#9C7A3D;--brass-light:#B9954E;--line:#DFD8C6;
+  --shadow:0 24px 60px rgba(35,48,43,.10);--shadow-sm:0 10px 30px rgba(35,48,43,.07);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--ivory);line-height:1.75;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.sh,.head{font-family:'Fraunces',Georgia,serif;font-weight:500;letter-spacing:-.01em;line-height:1.14}
+.wrap{max-width:1160px;margin:0 auto;padding:0 36px}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--forest);outline-offset:3px}
+.ey{font-family:'Inter';font-size:12px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--brass)}
+.ph{filter:saturate(.92) contrast(1.02);background-color:var(--ivory2)}
+.btn{font-family:'Inter';font-size:14.5px;font-weight:500;letter-spacing:.01em;padding:15px 32px;border-radius:6px;display:inline-block;cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .12s;border:1.5px solid transparent}
+.btn:active{transform:translateY(1px)}
+.bp{background:var(--forest);color:#F5F1E7}
+.bp:hover{background:var(--forest-deep)}
+.bo{background:transparent;color:var(--forest);border-color:var(--line)}
+.bo:hover{border-color:var(--forest)}
+.link{font-family:'Inter';font-weight:500;font-size:14.5px;color:var(--forest);border-bottom:1.5px solid var(--brass);padding-bottom:2px}
+.link:hover{color:var(--brass)}
+
+/* TOPBAR */
+.topbar{background:var(--forest-deep);color:rgba(245,241,231,.82);font-size:12.5px;text-align:center;padding:9px 16px;letter-spacing:.02em}
+.topbar .st{color:var(--brass-light);letter-spacing:1px}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;background:rgba(245,241,231,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .in{position:relative;display:flex;align-items:center;justify-content:space-between;padding:14px 36px;max-width:1160px;margin:0 auto}
+nav .logo{height:50px;width:auto;display:block}
+nav .wm{font-family:'Jost',sans-serif;font-size:25px;font-weight:600;letter-spacing:.2em;color:var(--brass);line-height:1}
+nav .nl{display:flex;gap:34px;align-items:center;font-size:14.5px;color:var(--ink);font-weight:500}
+nav .nl a:not(.btn):hover{color:var(--brass)}
+nav .burger{display:none;background:none;border:0;color:var(--ink);font-size:25px;line-height:1;cursor:pointer;padding:4px 6px}
+
+/* HERO */
+.hero{padding:78px 0 96px}
+.hero .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.hero h1{font-size:60px;font-weight:500;margin:20px 0 0;letter-spacing:-.02em}
+.hero h1 em{font-style:italic;color:var(--brass)}
+.hero p.lead{font-size:18.5px;color:var(--muted);margin:26px 0 0;max-width:470px}
+.hero .cta{display:flex;gap:26px;margin:36px 0 0;flex-wrap:wrap;align-items:center}
+.hero .art{position:relative}
+.hero .art .pic{aspect-ratio:4/5;border-radius:10px;background-size:cover;background-position:center 15%;box-shadow:var(--shadow)}
+.hero .art:before{content:"";position:absolute;inset:18px -18px -18px 18px;border:1.5px solid var(--brass);border-radius:10px;z-index:-1}
+.hero-logo{height:152px;width:auto;display:block;margin:0 0 24px}
+.hero .art .badge{position:absolute;left:-26px;bottom:34px;background:var(--ivory);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:19px 26px;display:flex;align-items:center;gap:17px;z-index:2}
+.hero .art .badge .st{color:var(--brass);font-size:18px;letter-spacing:2px;white-space:nowrap}
+.hero .art .badge b{font-family:'Fraunces',serif;font-weight:500;font-size:20px;display:block;line-height:1.15}
+.hero .art .badge small{color:var(--muted);font-size:14px}
+
+/* SECTION */
+section{padding:108px 0}
+.sh{font-size:42px;font-weight:500;margin:14px 0 0;letter-spacing:-.015em}
+.sh em{font-style:italic;color:var(--forest)}
+.sh em.bz{color:var(--brass)}
+.bzl{color:var(--brass-light)}
+.lead2{color:var(--muted);font-size:17px;max-width:600px;margin:18px 0 0}
+.center{text-align:center}.center .lead2{margin-left:auto;margin-right:auto}
+.rule{width:46px;height:2px;background:var(--brass);margin:0 0 4px}
+.center .rule{margin:0 auto 4px}
+
+/* VERSPRECHEN */
+.promise{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.promise .in{display:grid;grid-template-columns:.8fr 1fr;gap:64px;align-items:center}
+.promise h2{font-size:36px;font-weight:500}
+.promise p{color:var(--muted);font-size:16.5px;margin-top:18px}
+
+/* ANGEBOT */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:54px}
+.ocard{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.ocard .top{height:260px;background-size:cover;background-position:center}
+.ocard .bd{padding:36px 38px 40px}
+.ocard h3{font-size:27px;font-weight:500}
+.ocard p{color:var(--muted);font-size:15.5px;margin-top:12px}
+.ocard ul{list-style:none;margin:20px 0 28px}
+.ocard li{display:flex;gap:12px;align-items:flex-start;font-size:15px;margin:11px 0}
+.ocard li i{color:var(--brass);font-style:normal;font-weight:700}
+
+/* WHY (Petrol Vollfläche) */
+.why{background:var(--forest);color:#F5F1E7}
+.why .rule{background:var(--brass-light)}
+.why .ey{color:var(--brass-light)}
+.why h2{font-size:40px;font-weight:500;color:#F5F1E7;max-width:740px}
+.why .wsub{color:rgba(245,241,231,.78);font-size:17px;margin-top:16px;max-width:560px}
+.wgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:48px 64px;margin-top:60px}
+.wcell{display:flex;gap:20px;align-items:flex-start}
+.wcell .ic{color:var(--brass-light);flex-shrink:0;margin-top:3px}
+.wcell h3{font-size:21px;font-weight:500;color:#F5F1E7}
+.wcell p{color:rgba(245,241,231,.72);font-size:14.5px;margin-top:6px}
+
+/* ABLAUF */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:34px;margin-top:58px}
+.step{position:relative}
+.step .num{font-family:'Fraunces',serif;font-size:30px;font-weight:500;font-style:italic;color:var(--brass)}
+.step h3{font-size:22px;font-weight:500;margin:6px 0 8px}
+.step p{color:var(--muted);font-size:15px}
+.step:not(:last-child):after{content:"";position:absolute;top:18px;right:-24px;width:48px;height:1px;background:var(--line)}
+
+/* FÄCHER */
+.faecher{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.subs{display:flex;flex-wrap:wrap;gap:14px;margin-top:42px;justify-content:center}
+.sub{border:1px solid var(--line);border-radius:6px;padding:13px 24px;font-size:15.5px;font-weight:500;background:var(--ivory)}
+.sub-it{position:relative;border-color:var(--brass);cursor:pointer}
+.sub-it .star{position:absolute;top:-9px;right:-9px;font-size:15px;line-height:1;color:#F2C14E;text-shadow:0 0 7px rgba(242,193,78,.95),0 0 13px rgba(242,193,78,.5);animation:twinkle 1.9s ease-in-out infinite;pointer-events:none}
+@keyframes twinkle{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.22)}}
+.it-tip{position:absolute;bottom:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(6px);background:var(--forest-deep);color:#F5F1E7;padding:10px 14px;border-radius:8px;font-size:12.5px;font-weight:500;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;box-shadow:0 8px 22px rgba(0,0,0,.22);z-index:5}
+.it-tip::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--forest-deep)}
+.sub-it:hover .it-tip{opacity:1;transform:translateX(-50%) translateY(0)}
+@media(prefers-reduced-motion:reduce){.sub-it .star{animation:none}}
+
+/* FERIENKURSE */
+.fk-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px}
+.fk-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:34px 30px;border-top:3px solid var(--brass);display:flex;flex-direction:column}
+.fk-card .season{font-family:'Inter';font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--brass)}
+.fk-card h3{font-size:23px;font-weight:500;margin:8px 0 0}
+.fk-card p{color:var(--muted);font-size:15px;margin-top:12px}
+.fk-card .fk-foot{margin-top:auto;padding-top:16px;border-top:1px solid var(--line)}
+.fk-card .fk-price{font-family:'Fraunces',serif;font-size:24px;color:var(--forest);line-height:1}
+.fk-card .fk-price span{font-family:'Inter';font-size:13px;color:var(--muted);font-weight:400}
+.fk-card .fk-meta{font-family:'Inter';font-size:13px;font-weight:600;letter-spacing:.02em;color:var(--muted);margin-top:8px}
+.fk-facts{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:42px}
+.fk-fact{display:flex;align-items:center;gap:9px;font-size:14.5px;font-weight:500;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:11px 20px}
+.fk-fact i{color:var(--brass);font-style:normal;font-weight:700}
+.fk-quote{font-family:'Fraunces',serif;font-style:italic;font-size:22px;line-height:1.5;text-align:center;max-width:720px;margin:46px auto 0;color:var(--forest)}
+.fk-cta{text-align:center;margin-top:40px}
+.fk-cta .fk-note{font-size:13px;color:var(--muted);margin-top:12px}
+.sommer{display:flex;align-items:flex-start;gap:26px;background:var(--forest);color:#F5F1E7;border-radius:14px;padding:32px 36px;margin-top:50px}
+.sommer-badge{flex-shrink:0;font-family:'Inter';font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--forest-deep);background:var(--brass-light);padding:8px 14px;border-radius:999px;margin-top:3px}
+.sommer h3{font-size:22px;color:#fff;font-weight:500}
+.sommer p{color:rgba(245,241,231,.85);font-size:15px;margin-top:7px}
+
+/* REVIEWS */
+.testi{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:54px;text-align:left}
+.tcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:36px 34px}
+.tcard .q{font-family:'Fraunces',serif;font-size:40px;font-style:italic;color:var(--brass);line-height:1;height:auto;margin:0 0 6px;display:block}
+.tcard p{font-family:'Fraunces',serif;font-size:18px;font-style:italic;margin:0;color:var(--ink);line-height:1.5}
+.swipe-hint{display:none}
+.who{display:flex;align-items:center;gap:13px;margin-top:24px}
+.av{width:44px;height:44px;border-radius:50%;background:var(--forest-soft);color:var(--forest);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:600}
+.who b{font-family:'Inter';font-weight:600;font-size:14.5px;display:block}
+.who small{color:var(--muted);font-size:12.5px}
+
+/* STANDORTE */
+.locs{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:50px}
+.loc{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.loc .map{width:100%;height:220px;border:0;display:block;filter:saturate(.92) contrast(1.02)}
+.loc .mapholder{height:220px;background:var(--forest-soft);display:flex;align-items:center;justify-content:center;text-align:center;cursor:pointer;padding:18px;box-sizing:border-box}
+.mh-in{color:var(--forest)} .mh-in p{margin:6px 0 10px;font-family:'Inter';font-size:14px;font-weight:600}
+.map-load{font-family:'Inter';font-size:13.5px;font-weight:600;color:#fff;background:var(--forest);border:0;border-radius:8px;padding:8px 16px;cursor:pointer}
+.mh-note{display:block;margin-top:10px;font-size:11.5px;color:#65706A}
+.loc .bd{padding:28px 32px 32px}
+.loc h3{font-size:24px;font-weight:500}
+.loc .addr{color:var(--ink);font-size:15px;margin-top:6px}
+.loc .det{margin-top:16px;display:flex;flex-direction:column;gap:9px;font-size:14.5px}
+.loc .det a{display:inline-flex;align-items:center;gap:9px;color:var(--forest)}
+.loc .det a:hover{color:var(--brass)}
+
+/* SCHWEBE-BUTTONS (Instagram + Kontakt) */
+.mail-fab{position:fixed;right:22px;bottom:22px;z-index:1200;width:58px;height:58px;border-radius:50%;background:var(--brass);display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 8px 24px rgba(35,48,43,.28);transition:transform .2s,box-shadow .2s,background .2s}
+.mail-fab:hover{transform:scale(1.07);background:var(--brass-light)}
+.mail-fab svg{width:28px;height:28px;display:block}
+.ig-fab{position:fixed;right:22px;bottom:90px;z-index:1200;width:58px;height:58px;border-radius:50%;background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%);display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 8px 24px rgba(35,48,43,.28);transition:transform .2s,box-shadow .2s}
+.ig-fab:hover{transform:scale(1.07)}
+.ig-fab svg{width:30px;height:30px;display:block}
+.fab-tip{position:absolute;right:70px;white-space:nowrap;background:var(--forest-deep);color:#F5F1E7;padding:9px 13px;border-radius:8px;font-family:'Inter';font-size:13px;font-weight:500;opacity:0;pointer-events:none;transform:translateX(8px);transition:opacity .2s,transform .2s;box-shadow:0 6px 18px rgba(0,0,0,.2)}
+.fab-tip::after{content:"";position:absolute;right:-5px;top:50%;transform:translateY(-50%);border-left:6px solid var(--forest-deep);border-top:6px solid transparent;border-bottom:6px solid transparent}
+.mail-fab:hover .fab-tip,.ig-fab:hover .fab-tip{opacity:1;transform:translateX(0)}
+@media(max-width:640px){.mail-fab,.ig-fab{width:54px;height:54px;right:15px}.mail-fab{bottom:15px}.ig-fab{bottom:79px}.fab-tip{display:none}}
+
+/* KONTAKTFORMULAR */
+.kontakt{background:var(--forest);color:#F5F1E7}
+.kontakt .ey{color:var(--brass-light)}.kontakt .rule{background:var(--brass-light)}
+.kontakt .sh{color:#F5F1E7}.kontakt .sh em{color:#fff}
+.kontakt .lead2{color:rgba(245,241,231,.78)}
+.trustline{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 24px;margin:22px auto 0;font-family:'Inter';font-size:13.5px;font-weight:500;color:rgba(245,241,231,.8)}
+.kform{background:var(--ivory);color:var(--ink);border-radius:14px;padding:48px;box-shadow:var(--shadow);max-width:800px;margin:46px auto 0}
+.kform .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.fg{margin-top:18px}.fg:first-child,.row .fg:nth-child(2){margin-top:0}
+.fg.full{grid-column:1/-1}
+.fg label{display:block;font-family:'Inter';font-size:14px;font-weight:600;margin-bottom:7px}
+.fg label .req{color:var(--brass)}
+.fg input,.fg select,.fg textarea{width:100%;font-family:'Inter';font-size:15px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:8px;padding:13px 15px;transition:.15s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--forest);background:#fff}
+.fg input:user-invalid,.fg select:user-invalid{border-color:#C0603A}
+.fg textarea{min-height:120px;resize:vertical}
+.opt{font-weight:400;color:var(--muted);font-size:12.5px}
+.fachgrid{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.fachtile{font-family:'Inter';font-size:14.5px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:6px;padding:11px 18px;cursor:pointer;transition:.15s}
+.fachtile:hover{border-color:var(--forest)}
+.fachtile.sel{background:var(--forest);color:#F5F1E7;border-color:var(--forest)}
+.facherr{display:none;color:#C0603A;font-size:13px;margin-top:9px}
+.facherr.show{display:block}
+.consent{display:flex;gap:12px;align-items:flex-start;margin-top:24px;font-size:13.5px;color:var(--muted);line-height:1.5}
+.consent input{width:20px;height:20px;flex-shrink:0;margin-top:2px;accent-color:var(--forest)}
+.consent a{color:var(--forest);text-decoration:underline}
+.kform .btn{margin-top:24px;width:100%;text-align:center;font-size:16px;padding:16px}
+.kform .hint{font-size:13px;color:var(--muted);margin-top:14px;text-align:center}
+.kform .done{display:none;text-align:center;padding:24px 0}
+.kform .done .q{font-family:'Fraunces',serif;font-size:40px;font-style:italic;color:var(--brass)}
+.kform .done h3{font-size:28px;font-weight:500;margin:6px 0 6px}
+.kform .done p{color:var(--muted);font-size:15px}
+
+/* FOOTER */
+footer{background:var(--forest-deep);color:rgba(245,241,231,.72);padding:72px 0 40px}
+footer .ft{text-align:center}
+footer .ft img{height:56px;margin:0 auto 20px;filter:brightness(0) invert(1);opacity:.92}
+footer .ft h3{color:#F5F1E7;font-size:30px;font-weight:500}
+footer .ft p{font-size:15px;margin-top:8px}
+footer .ci{display:flex;justify-content:center;gap:32px;margin-top:24px;flex-wrap:wrap;font-size:14.5px}
+footer .ci a:hover{color:#fff}
+footer .bot{border-top:1px solid rgba(245,241,231,.16);margin-top:38px;padding-top:24px;text-align:center;font-size:12.5px;color:rgba(245,241,231,.6)}
+footer .bot a{color:rgba(245,241,231,.85);text-decoration:underline;cursor:pointer}
+footer .bot a:hover{color:#fff}
+
+/* RECHTSTEXTE — Overlays */
+.lov{position:fixed;inset:0;z-index:300;display:none;align-items:flex-start;justify-content:center;background:rgba(20,30,28,.55);padding:5vh 16px;overflow-y:auto}
+.lov.open{display:flex}
+.lmodal{background:var(--ivory);border-radius:14px;max-width:760px;width:100%;box-shadow:0 30px 80px rgba(0,0,0,.32);margin:auto}
+.lhead{display:flex;align-items:center;justify-content:space-between;padding:22px 30px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--ivory);border-radius:14px 14px 0 0;z-index:1}
+.lhead h2{font-size:26px;font-weight:500}
+.lclose{background:none;border:0;font-size:30px;line-height:1;cursor:pointer;color:var(--muted);padding:0 4px}
+.lclose:hover{color:var(--ink)}
+.lbody{padding:26px 30px 36px}
+.lbody .le{font-family:'Inter';font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);font-weight:600;margin-top:22px}
+.lbody .le:first-child{margin-top:0}
+.lbody p{font-size:14.5px;line-height:1.66;margin:7px 0 0;color:var(--ink)}
+.lbody p.small{font-size:13px;line-height:1.6;color:var(--muted)}
+.lbody a{color:var(--forest);text-decoration:underline}
+@media(max-width:640px){.lbody{padding:22px 20px 30px}.lhead{padding:16px 20px}.lhead h2{font-size:22px}}
+/* Buchungs-Pop-up */
+.bmodal{max-width:860px}
+.bmodal .kform{box-shadow:none;border:0;padding:0;margin:0;max-width:none;background:transparent}
+.b-price{margin-top:20px;padding:14px 20px;background:var(--forest-soft);border-radius:10px;font-family:'Fraunces',serif;font-size:21px;color:var(--forest)}
+.fk-card{cursor:pointer;transition:transform .2s ease,box-shadow .2s ease}
+.fk-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.lhead-l{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.plaetze{font-family:'Inter';font-size:12.5px;font-weight:600;letter-spacing:.02em;padding:6px 13px;border-radius:999px;background:var(--forest-soft);color:var(--forest);white-space:nowrap}
+.plaetze.low{background:#F6E3CE;color:#9A5B22}
+.plaetze.full{background:#F1D7CF;color:#A93E29}
+.ausgebucht-msg{margin:0 0 20px;padding:14px 18px;border-radius:10px;background:#F1D7CF;color:#8E3B27;font-size:14.5px;font-weight:500;line-height:1.5}
+.b-note{margin:0 0 20px;padding:13px 17px;background:var(--cream2);border-left:3px solid var(--brass);border-radius:8px;font-size:14px;line-height:1.55;color:var(--ink)}
+
+/* MOTION */
+.is-reveal{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.is-reveal.in{opacity:1;transform:none}
+.ocard,.tcard{transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .4s ease,box-shadow .3s ease}
+.ocard:hover,.tcard:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+@media(prefers-reduced-motion:reduce){.is-reveal{opacity:1!important;transform:none!important;transition:none!important}}
+
+@media(max-width:900px){
+  nav .burger{display:block}
+  nav .nl{position:absolute;top:100%;left:0;right:0;background:var(--ivory);flex-direction:column;gap:0;padding:6px 0;display:none;border-bottom:1px solid var(--line);box-shadow:0 14px 26px rgba(0,0,0,.1)}
+  nav .nl.open{display:flex}
+  nav .nl a:not(.btn){display:block;width:100%;padding:13px 36px}
+  nav .nl .btn{margin:10px 36px 12px}
+  .hero .grid,.promise .in,.two,.wgrid,.steps,.fk-cards,.locs,.kform .row{grid-template-columns:1fr}
+  .testi{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:14px;margin-top:34px;padding-bottom:14px}
+  .testi::-webkit-scrollbar{height:0}
+  .testi .tcard{flex:0 0 84%;scroll-snap-align:center}
+  .testi .tcard.is-reveal{opacity:1;transform:none;transition:none}
+  .swipe-hint{display:block;text-align:center;color:var(--muted);font-size:12.5px;margin-top:12px;letter-spacing:.04em}
+  .hero h1{font-size:40px}.hero .art{order:-1}.hero .art:before{display:none}
+  .hero-logo{height:104px;margin:0 0 16px}
+  .hero .art .badge{left:10px;bottom:14px;padding:11px 15px}
+  section{padding:64px 0}
+  .sh,.why h2,.promise h2{font-size:30px}
+  .step:not(:last-child):after{display:none}
+  .row .fg:nth-child(2){margin-top:18px}.kform{padding:30px 22px}
+  .sommer{flex-direction:column;gap:14px;padding:26px 24px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar"><span class="st">★★★★★</span>&nbsp;&nbsp;Familien aus der Region vertrauen uns · seit 2019</div>
+
+<nav>
+  <div class="in">
+    <a href="#" aria-label="CALLIDUS — Startseite" class="wm">CALLIDUS</a>
+    <div class="nl" id="navmenu">
+      <a href="#angebot">Angebot</a>
+      <a href="#warum">Warum CALLIDUS</a>
+      <a href="#faecher">Fächer</a>
+      <a href="#ferienkurse">Ferienkurse</a>
+      <a href="#standorte">Standorte</a>
+      <a class="btn bp" href="#kontakt">Erstgespräch</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap grid">
+    <div>
+      <img src="logo-callidus.png" alt="CALLIDUS — Lernförderung aus Leidenschaft" class="hero-logo">
+      <div class="rule"></div>
+      <div class="ey">Nachhilfe in Magdeburg &amp; Wolmirstedt</div>
+      <h1>Damit Ihr Kind wieder <em>gerne lernt.</em></h1>
+      <p class="lead">Persönliche Förderung in sehr kleinen Gruppen von höchstens drei Kindern — oder ganz individuell im Einzelunterricht. Mit Ruhe, Erfahrung und echtem Draht zu Ihrem Kind.</p>
+      <div class="cta">
+        <a class="btn bp" href="#kontakt">Kostenloses Erstgespräch</a>
+        <a class="link" href="#angebot">Unser Angebot ansehen</a>
+      </div>
+    </div>
+    <div class="art">
+      <div class="pic ph" style="background-image:url('img/foto3.jpg');background-position:center 30%"></div>
+      <div class="badge"><div class="st">★★★★★</div><div><b>Eltern empfehlen uns</b><small>persönlich &amp; weiter</small></div></div>
+    </div>
+  </div>
+</header>
+
+<div class="promise">
+  <div class="wrap in" style="padding-top:96px;padding-bottom:96px">
+    <div>
+      <div class="rule"></div>
+      <div class="ey">Unser Versprechen</div>
+      <h2>Ihr Kind ist bei uns <em>nicht nur eine Nummer.</em></h2>
+    </div>
+    <div>
+      <p>Wir setzen bewusst auf kleine, homogene Lerngruppen und echte Betreuung — Qualität vor Quantität, seit dem ersten Tag. Bei CALLIDUS kennt das Team Ihr Kind beim Namen, sieht, wo es steht, und begleitet es geduldig dorthin, wo es hinmöchte.</p>
+    </div>
+  </div>
+</div>
+
+<section id="angebot">
+  <div class="wrap center">
+    <div class="rule"></div>
+    <div class="ey">Unser Angebot</div>
+    <div class="sh">Zwei Wege, die zu <em class="bz">Ihrem Kind</em> passen</div>
+    <p class="lead2">Ob in der kleinen Gruppe oder ganz individuell — wir finden den Weg, der zu Ihrem Kind passt.</p>
+  </div>
+  <div class="wrap">
+    <div class="two">
+      <div class="ocard">
+        <div class="top ph" style="background-image:url('img/foto1.jpg')"></div>
+        <div class="bd">
+          <h3>Kleingruppen-Nachhilfe</h3>
+          <p>Höchstens drei Kinder, zusammengestellt nach Fach und Klassenstufe — von der Grundschule bis zum Abitur.</p>
+          <ul><li><i>—</i> Echte Aufmerksamkeit für jedes Kind</li><li><i>—</i> Fester Wochentermin, verlässliche Routine</li><li><i>—</i> Voneinander lernen in der kleinen Gruppe</li></ul>
+          <a class="link" href="#kontakt">Kostenloses Erstgespräch →</a>
+        </div>
+      </div>
+      <div class="ocard">
+        <div class="top ph" style="background-image:url('img/foto2.jpg')"></div>
+        <div class="bd">
+          <h3>Einzelförderung 1:1</h3>
+          <p>Volle Aufmerksamkeit, ganz im Tempo Ihres Kindes — bis der Knoten platzt.</p>
+          <ul><li><i>—</i> Ideal bei größeren Lücken</li><li><i>—</i> Gezielte Prüfungs- &amp; Abiturvorbereitung</li><li><i>—</i> Maximales Lerntempo nach Bedarf</li></ul>
+          <a class="link" href="#kontakt">Kostenloses Erstgespräch →</a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:820px;margin:36px auto 0;padding:18px 22px;background:var(--forest-soft);border-left:4px solid var(--brass);border-radius:10px;color:#2b2b2b;font-size:15px;line-height:1.62"><strong style="color:var(--forest)">Zu den Preisen:</strong> Für die reguläre Nachhilfe können wir keine Pauschalpreise nennen, ohne Ihr Kind und seine Bedarfe zu kennen — wir gestalten für jedes Kind einen individuellen Vertrag, passend zum Bedarf und zur jeweiligen Klassenstufe. Im <a href="#kontakt" style="color:var(--forest);border-bottom:1.5px solid var(--brass)">kostenfreien Erstgespräch</a> klären wir diese Frage selbstverständlich in aller Ruhe — so haben Sie direkt einen Überblick, bevor es zur Probestunde geht.</div>
+  </div>
+</section>
+
+<div class="why" id="warum" style="padding:108px 0">
+  <div class="wrap">
+    <div class="rule"></div>
+    <div class="ey">Darum vertrauen uns Familien</div>
+    <h2>Keine Massenabfertigung.<br><em style="font-style:italic"><span class="bzl">Niemals</span> Großgruppen.</em></h2>
+    <p class="wsub">Worauf bei CALLIDUS Verlass ist — und was Ihr Kind in jeder Stunde spürt.</p>
+    <div class="wgrid">
+      <div class="wcell"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" width="30" height="30"><circle cx="9" cy="8.5" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><path d="M16.5 6.2a2.8 2.8 0 0 1 0 5.4"/><path d="M17 19a5.4 5.4 0 0 0-2.2-4.1"/></svg></span><div><h3>Höchstens 3 Kinder</h3><p>So geht kein Kind unter — anders als in der vollen Schulklasse.</p></div></div>
+      <div class="wcell"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" width="30" height="30"><path d="M12 5 3 9l9 4 9-4-9-4Z"/><path d="M7 11.2V15c0 1.2 2.2 2.2 5 2.2s5-1 5-2.2v-3.8"/><path d="M21 9.5V14"/></svg></span><div><h3>Qualifizierte Dozenten</h3><p>Erfahrene, geprüfte Lehrkräfte, die die Schulen der Region kennen.</p></div></div>
+      <div class="wcell"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" width="30" height="30"><circle cx="12" cy="12.5" r="8"/><path d="M12 8v4.5l3 1.8"/></svg></span><div><h3>Fester Wochentermin</h3><p>Verlässliche Routine zur gleichen Zeit — Struktur, auf die Verlass ist.</p></div></div>
+      <div class="wcell"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" width="30" height="30"><path d="M12 20s-6.5-4-6.5-8.7A3.4 3.4 0 0 1 12 8.2a3.4 3.4 0 0 1 6.5 3.1C18.5 16 12 20 12 20Z"/></svg></span><div><h3>Direkter Draht zu Ihnen</h3><p>Persönlicher Kontakt und ehrliche Rückmeldungen — immer.</p></div></div>
+      <div class="wcell"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" width="30" height="30"><path d="M4 5h16a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H9l-4 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/></svg></span><div><h3>Kostenfreies Erstgespräch</h3><p>Unsere Experten nehmen sich gern die Zeit und hören Ihnen in Ruhe zu.</p></div></div>
+      <div class="wcell"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" width="30" height="30"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0"/><path d="M9 10h.01M15 10h.01"/></svg></span><div><h3>Kostenfreie Probestunde</h3><p>Zum gegenseitigen Kennenlernen — damit auch das Zwischenmenschliche passt.</p></div></div>
+      <div class="wcell"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" width="30" height="30"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg></span><div><h3>Regelmäßige Elterngespräche</h3><p>Nach Vereinbarung. Unsere Arbeit ist und bleibt für Sie transparent — dafür stehen wir ein.</p></div></div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap center">
+    <div class="rule"></div>
+    <div class="ey">So läuft's</div>
+    <div class="sh">In vier Schritten zum <em class="bz">passenden Platz</em></div>
+  </div>
+  <div class="wrap">
+    <div class="steps">
+      <div class="step"><div class="num">01</div><h3>Kostenloses Erstgespräch</h3><p>Sie schildern uns, worum es geht — wir hören zu und schauen uns die Lücken Ihres Kindes in Ruhe an.</p></div>
+      <div class="step"><div class="num">02</div><h3>Der passende Weg</h3><p>Wir schlagen vor, was zu Ihrem Kind passt: kleine Gruppe oder Einzelförderung, das richtige Fach, der feste Termin.</p></div>
+      <div class="step"><div class="num">03</div><h3>Kostenfreie Probestunde</h3><p>Ihr Kind lernt sein Team kennen — ganz unverbindlich, damit auch das Zwischenmenschliche passt.</p></div>
+      <div class="step"><div class="num">04</div><h3>Finales Vertragsgespräch</h3><p>Passt alles, gestalten wir gemeinsam den individuellen Vertrag — genau nach dem Bedarf Ihres Kindes und seiner Klassenstufe. Dann geht es in Ruhe los.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="faecher" id="faecher">
+  <div class="wrap center">
+    <div class="rule"></div>
+    <div class="ey">Fächer &amp; Klassenstufen</div>
+    <div class="sh">Von der <em>ersten Klasse</em> bis zum <em>Abitur</em></div>
+    <div class="subs">
+      <div class="sub">Mathematik</div><div class="sub">Deutsch</div><div class="sub">Englisch</div>
+      <div class="sub">Physik</div><div class="sub">Chemie</div><div class="sub">Biologie</div>
+      <div class="sub">Latein</div><div class="sub">Französisch</div><a class="sub sub-it" href="https://callidus-sprachkurse.de" target="_blank" rel="noopener">Italienisch<span class="star">★</span><span class="it-tip">Zu unseren CALLIDUS Sprachkursen →</span></a>
+    </div>
+    <p class="lead2" style="margin-top:24px">… und weitere Fächer auf Anfrage.</p>
+  </div>
+</section>
+
+<section id="ferienkurse">
+  <div class="wrap center">
+    <div class="rule"></div>
+    <div class="ey">Ferienkurse</div>
+    <div class="sh">Gestärkt in die <em class="bz">entscheidende Phase</em></div>
+    <p class="lead2">In den Herbst- und Winterferien bereiten wir Ihr Kind in kompakten Intensivkursen gezielt auf die nächste Etappe vor — in der kleinen Gruppe, mit großer Wirkung.</p>
+  </div>
+  <div class="wrap">
+    <div class="fk-cards">
+      <div class="fk-card" data-kurs="Herbstferien">
+        <div class="season">Herbstferien · 19.–30. Oktober 2026</div>
+        <h3>Vor den Halbjahreszeugnissen</h3>
+        <p>Wir festigen den Stoff, schließen Lücken und geben Sicherheit für die entscheidenden Wochen — damit Ihr Kind ausgeruht und vorbereitet in die Zeugnisphase geht.</p>
+        <div class="fk-foot"><div class="fk-meta">5 Tage · täglich 2 Unterrichtsstunden</div></div>
+      </div>
+      <div class="fk-card" data-kurs="Winterferien">
+        <div class="season">Winterferien · 01.–05. Februar 2027</div>
+        <h3>Vor den Frühjahrs-Klassenarbeiten</h3>
+        <p>Intensivvorbereitung mit maximalem Effekt: die Kernthemen kompakt wiederholt und gefestigt — gestärkt ins zweite Halbjahr.</p>
+        <div class="fk-foot"><div class="fk-meta">5 Tage · täglich 2 Unterrichtsstunden</div></div>
+      </div>
+      <div class="fk-card" data-kurs="Prüfungssprint">
+        <div class="season">Osterferien · 22.–26. März 2027</div>
+        <h3>Prüfungssprint</h3>
+        <p>Der kompakte Endspurt vor den Realschulabschluss- und Abiturprüfungen: das Wichtigste wiederholen, echte Prüfungsaufgaben üben und mit Sicherheit in die Prüfung gehen.</p>
+        <div class="fk-foot"><div class="fk-meta">3 Tage · täglich 3 Stunden</div></div>
+      </div>
+    </div>
+    <div class="fk-facts">
+      <div class="fk-fact"><i>—</i> Höchstens 3 Kinder</div>
+      <div class="fk-fact"><i>—</i> Echte Kleingruppe wie im Stammunterricht</div>
+      <div class="fk-fact"><i>—</i> Abgestimmt auf Schultyp &amp; Jahrgang</div>
+    </div>
+    <div class="fk-cta">
+      <a class="btn bp" href="#" data-open="buchung">Sofortbuchung</a>
+      <p class="fk-note">Für unsere Herbst-, Winter- &amp; Oster-Kurse — auch für externe Schülerinnen und Schüler.</p>
+    </div>
+    <div class="sommer">
+      <span class="sommer-badge">Exklusiv für Stammschüler</span>
+      <div>
+        <h3>Sommerschule</h3>
+        <p>In den letzten drei Wochen der Sommerferien wiederholen und festigen unsere Stammschüler den Stoff — ohne extra Buchung und ohne zusätzliche Gebühr, als perfekter Start ins neue Schuljahr.</p>
+      </div>
+    </div>
+    <p class="fk-quote">„Ihr Kind kommt erholt und gestärkt in die entscheidende Phase — mit dem Wissen, das jetzt gebraucht wird."</p>
+  </div>
+</section>
+
+<div class="lov bov" id="buchung-ov" role="dialog" aria-modal="true" aria-label="Einmaligen Ferienkurs buchen">
+  <div class="lmodal bmodal">
+    <div class="lhead"><div class="lhead-l"><h2>Einmaligen Ferienkurs buchen</h2><span class="plaetze" id="b-plaetze" style="display:none"></span></div><button class="lclose" data-close aria-label="Schließen">&times;</button></div>
+    <div class="lbody">
+      <p class="lead2" style="margin:0 0 16px">Kurs wählen, Daten Ihres Kindes und Rechnungsadresse eintragen — wir bestätigen die Buchung und senden Ihnen die Rechnung per E-Mail.</p>
+      <div class="b-note">📅 <b>Wichtig für unsere Planung:</b> Bitte halten Sie Ihr Kind über die gesamten Ferien an <b>allen Tagen verfügbar</b>. Die genaue Einteilung der Unterrichtstage und -zeiten übernehmen wir und stimmen sie nach der Buchung mit Ihnen ab.</div>
+  <form class="kform" id="buchungForm" novalidate>
+    <div class="fields">
+      <div class="ausgebucht-msg" id="b-soldout" style="display:none">Kurs bereits ausgebucht. Bitte wählen Sie einen anderen Kurs oder wenden Sie sich an unser Team.</div>
+      <div class="row">
+        <div class="fg"><label>Kurs <span class="req">*</span></label><select name="kurs" required><option value="" disabled selected>Bitte wählen</option><option>Herbstferien · 19.–30.10.2026 (5 Tage)</option><option>Winterferien · 01.–05.02.2027 (5 Tage)</option><option>Prüfungssprint · Osterferien 22.–26.03.2027 (3 Tage)</option></select></div>
+        <div class="fg"><label>Standort <span class="req">*</span></label><select name="standort" required><option value="" disabled selected>Bitte wählen</option><option>Magdeburg</option><option>Wolmirstedt</option></select></div>
+        <div class="fg"><label>Vorname des Kindes <span class="req">*</span></label><input name="kind_vorname" required placeholder="z. B. Leon"></div>
+        <div class="fg"><label>Nachname des Kindes <span class="req">*</span></label><input name="kind_nachname" required placeholder="z. B. Mustermann"></div>
+        <div class="fg"><label>Klasse <span class="req">*</span></label><select name="klasse" required><option value="" disabled selected>Bitte wählen</option><option>1. Klasse</option><option>2. Klasse</option><option>3. Klasse</option><option>4. Klasse</option><option>5. Klasse</option><option>6. Klasse</option><option>7. Klasse</option><option>8. Klasse</option><option>9. Klasse</option><option>10. Klasse</option><option>11. Klasse</option><option>12. Klasse</option></select></div>
+        <div class="fg"><label>Schulform <span class="req">*</span></label><select name="schulform" required><option value="" disabled selected>Bitte wählen</option><option>Grundschule</option><option>Sekundarschule</option><option>Gymnasium</option></select></div>
+        <div class="fg full"><label>Fach / Fächer <span class="req">*</span> <span class="opt">(bis zu 3 auswählen)</span></label>
+          <div class="fachgrid" id="b_fachgrid">
+            <button type="button" class="fachtile" data-fach="Mathematik">Mathematik</button>
+            <button type="button" class="fachtile" data-fach="Deutsch">Deutsch</button>
+            <button type="button" class="fachtile" data-fach="Englisch">Englisch</button>
+            <button type="button" class="fachtile" data-fach="Physik">Physik</button>
+            <button type="button" class="fachtile" data-fach="Chemie">Chemie</button>
+            <button type="button" class="fachtile" data-fach="Biologie">Biologie</button>
+            <button type="button" class="fachtile" data-fach="Latein">Latein</button>          </div>
+          <div class="facherr" id="b_fachErr">Bitte mindestens ein Fach auswählen.</div>
+        </div>
+        <div class="fg"><label>Anrede <span class="req">*</span></label><select name="anrede" required><option value="" disabled selected>Bitte wählen</option><option>Herr</option><option>Frau</option></select></div>
+        <div class="fg"><label>Rechnungsempfänger (Eltern) <span class="req">*</span></label><input name="eltern" required placeholder="Vor- und Nachname"></div>
+        <div class="fg"><label>Telefon <span class="req">*</span></label><input type="tel" name="telefon" required placeholder="Für Rückfragen"></div>
+        <div class="fg"><label>E-Mail <span class="req">*</span></label><input type="email" name="email" required placeholder="ihre@email.de"></div>
+        <div class="fg"><label>Straße &amp; Hausnummer <span class="req">*</span></label><input name="strasse" required placeholder="Musterstraße 1"></div>
+        <div class="fg"><label>PLZ &amp; Ort <span class="req">*</span></label><input name="plzort" required placeholder="39104 Magdeburg"></div>
+        <div class="fg full"><label>Nachricht</label><textarea name="nachricht" placeholder="Schwerpunkte, Wünsche, Fragen …"></textarea></div>
+      </div>
+      <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden"><label>Firma (bitte frei lassen) <input type="text" name="firma" tabindex="-1" autocomplete="off"></label></div>
+      <input type="hidden" name="ts_open" value="">
+      <div id="b-price" class="b-price" style="display:none"></div>
+      <label class="consent"><input type="checkbox" name="agb" required><span>Ich habe die <a href="#" data-legal="agb">Allgemeinen Geschäftsbedingungen (AGB)</a> gelesen und akzeptiere sie. <span class="req">*</span></span></label>
+      <label class="consent"><input type="checkbox" name="datenschutz" required><span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung und Rechnungsstellung gespeichert und verarbeitet werden. Es gelten die <a href="#" data-legal="ds">Datenschutzhinweise</a>. <span class="req">*</span></span></label>
+      <label class="consent"><input type="checkbox" name="gelesen" required><span>Ich habe alle Angaben geprüft sowie die <a href="#" data-legal="agb">AGB</a>, <a href="#" data-legal="ds">Datenschutzhinweise</a> und <a href="#" data-legal="wr">Widerrufsbelehrung</a> gelesen und verstanden. Ich gebe hiermit eine verbindliche, kostenpflichtige Buchung ab. <span class="req">*</span></span></label>
+      <button type="submit" class="btn bp">Kostenpflichtig buchen</button>
+      <div class="hint">Mit „Kostenpflichtig buchen" geben Sie eine verbindliche, kostenpflichtige Buchung ab. Sie erhalten <b>sofort eine Anmeldebestätigung</b>; die <b>Rechnung folgt nach kurzer Prüfung</b> per E-Mail. Es gelten unsere <a href="#" data-legal="agb">AGB</a>, <a href="#" data-legal="ds">Datenschutzhinweise</a> und die <a href="#" data-legal="wr">Widerrufsbelehrung</a>.</div>
+    </div>
+    <div class="done">
+      <div class="q">„</div>
+      <h3>Buchung eingegangen!</h3>
+      <p>Vielen Dank — wir bestätigen Ihre Buchung und schicken Ihnen die Rechnung per E-Mail.</p>
+    </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap center">
+    <div class="rule"></div>
+    <div class="ey">Was Eltern &amp; Schüler sagen</div>
+    <div class="sh">Familien aus der Region <em>vertrauen uns</em></div>
+    <div class="testi">
+      <div class="tcard"><div class="q">„</div><p>Was ich super fand war, dass die Dozenten überhaupt nicht streng waren und viel Humor hatten, was schwierige Situationen immer auflockerte. Sie hatten tolle Ideen und Tipps, wie man Tests, Klassenarbeiten und Prüfungen bestens übersteht.</p><div class="who"><div class="av">BH</div><div><b>Benny Heinrich</b><small>Schüler aus Wolmirstedt</small></div></div></div>
+      <div class="tcard"><div class="q">„</div><p>Hier arbeitet ein tolles Team in einer super Atmosphäre. Ich habe mich bei allen Lehrern sehr wohl gefühlt und wurde 1A auf das Abi vorbereitet. Ich bereue nur, dass ich mich nicht schon früher angemeldet habe.</p><div class="who"><div class="av">MB</div><div><b>Max Beerstein</b><small>Schüler aus Magdeburg</small></div></div></div>
+      <div class="tcard"><div class="q">„</div><p>Kein Schüler bräuchte mehr Nachhilfe, wenn CALLIDUS die Schule wäre.</p><div class="who"><div class="av">CH</div><div><b>Claudia Hecht</b><small>Mutter aus Wolmirstedt</small></div></div></div>
+      <div class="tcard"><div class="q">„</div><p>Das CALLIDUS-Team hat bei der Nachhilfe meinen Sohn durch schwere Mathezeiten begleitet, ihn motiviert, schwierige Aufgaben aufgearbeitet … In Kleingruppen erklärt und dadurch wirklich gut auf die Prüfung vorbereitet. Mein Sohn ist gern zur Mathenachhilfe gefahren. Vielen Dank!</p><div class="who"><div class="av">KF</div><div><b>Kathrin Flügel</b><small>Mutter aus Wolmirstedt</small></div></div></div>
+      <div class="tcard"><div class="q">„</div><p>Immer wieder erstaunlich, was man in so kurzer Zeit erreichen kann! Unser Sohn hat sich innerhalb eines Halbjahres um zwei Noten verbessert!</p><div class="who"><div class="av">BK</div><div><b>Björn Kuchholz</b><small>Vater aus Magdeburg</small></div></div></div>
+      <div class="tcard"><div class="q">„</div><p>Ein ganz liebes Dankeschön an euch! Ihr hattet eine geniale, ausdauernde Art, meiner Tochter den Mathestoff näher zu bringen, sodass sie es geschafft hat, durch die schwierige Matheprüfung zu kommen. In einer ruhigen und gemütlichen Atmosphäre hat es Sarah immer Spaß gemacht, bei euch zu ‚büffeln'.</p><div class="who"><div class="av">MJ</div><div><b>Melanie Jacob</b><small>Mutter aus Wolmirstedt</small></div></div></div>
+    </div>
+    <p class="swipe-hint">‹ zum Wischen für weitere Stimmen ›</p>
+  </div>
+</section>
+
+<section id="standorte">
+  <div class="wrap center">
+    <div class="rule"></div>
+    <div class="ey">Standorte</div>
+    <div class="sh">In Magdeburg <em>und Wolmirstedt</em></div>
+  </div>
+  <div class="wrap">
+    <div class="locs">
+      <div class="loc">
+        <div class="map mapholder" data-src="https://maps.google.com/maps?q=Harnackstra%C3%9Fe%205%2C%2039104%20Magdeburg&amp;z=16&amp;output=embed" data-title="Standort Magdeburg auf Google Maps"><div class="mh-in"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-6.5-5.3-6.5-10A6.5 6.5 0 0 1 18.5 11c0 4.7-6.5 10-6.5 10Z"/><circle cx="12" cy="11" r="2.3"/></svg><p>Karte von Google Maps</p><button type="button" class="map-load">Karte laden</button><span class="mh-note">Beim Laden werden Daten an Google übertragen.</span></div></div>
+        <div class="bd">
+          <h3>Magdeburg</h3>
+          <p class="addr">Harnackstraße 5 · 39104 Magdeburg</p>
+          <div class="det">
+            <a href="tel:+4939155576211">☎&nbsp; 0391 555 76 211</a>
+            <a href="mailto:info@callidus-magdeburg.de">✉&nbsp; info@callidus-magdeburg.de</a>
+          </div>
+        </div>
+      </div>
+      <div class="loc">
+        <div class="map mapholder" data-src="https://maps.google.com/maps?q=Rog%C3%A4tzer%20Stra%C3%9Fe%2019%2C%2039326%20Wolmirstedt&amp;z=16&amp;output=embed" data-title="Standort Wolmirstedt auf Google Maps"><div class="mh-in"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-6.5-5.3-6.5-10A6.5 6.5 0 0 1 18.5 11c0 4.7-6.5 10-6.5 10Z"/><circle cx="12" cy="11" r="2.3"/></svg><p>Karte von Google Maps</p><button type="button" class="map-load">Karte laden</button><span class="mh-note">Beim Laden werden Daten an Google übertragen.</span></div></div>
+        <div class="bd">
+          <h3>Wolmirstedt</h3>
+          <p class="addr">Rogätzer Straße 19 · 39326 Wolmirstedt</p>
+          <p class="addr" style="color:var(--muted);font-size:13.5px;margin-top:3px">Gebäudeteil am öffentlichen Parkplatz</p>
+          <div class="det">
+            <a href="tel:+4939201322278">☎&nbsp; 039201 322278</a>
+            <a href="mailto:info@callidus-magdeburg.de">✉&nbsp; info@callidus-magdeburg.de</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="kontakt" id="kontakt">
+  <div class="wrap center">
+    <div class="rule"></div>
+    <div class="ey">Kostenloses Erstgespräch</div>
+    <div class="sh">Erzählen Sie uns von <em>Ihrem Kind</em></div>
+    <p class="lead2">Schildern Sie uns kurz, worum es geht — wir melden uns persönlich bei Ihnen und schlagen einen passenden Weg vor. Ganz unverbindlich und kostenlos.</p>
+    <div class="trustline"><span>⏱ Antwort meist binnen 24 Std</span><span>✓ kostenlos &amp; unverbindlich</span><span>★ seit 2019 in der Region</span></div>
+  </div>
+  <form class="kform" id="anfrageForm" novalidate>
+    <div class="fields">
+      <div class="row">
+        <div class="fg"><label>Ihr Name (Eltern) <span class="req">*</span></label><input name="eltern" required placeholder="Vor- und Nachname"></div>
+        <div class="fg"><label>Standort <span class="req">*</span></label><select name="standort" required><option value="" disabled selected>Bitte wählen</option><option>Magdeburg</option><option>Wolmirstedt</option><option>Noch unklar</option></select></div>
+        <div class="fg"><label>E-Mail <span class="req">*</span></label><input type="email" name="email" required placeholder="ihre@email.de"></div>
+        <div class="fg"><label>Telefon <span class="req">*</span></label><input type="tel" name="telefon" required placeholder="Für einen schnellen Rückruf"></div>
+        <div class="fg"><label>Vorname des Kindes <span class="req">*</span></label><input name="kind_vorname" required placeholder="z. B. Leon"></div>
+        <div class="fg"><label>Nachname des Kindes <span class="req">*</span></label><input name="kind_nachname" required placeholder="z. B. Mustermann"></div>
+        <div class="fg"><label>Klasse <span class="req">*</span></label><select name="klasse" required><option value="" disabled selected>Bitte wählen</option><option>1. Klasse</option><option>2. Klasse</option><option>3. Klasse</option><option>4. Klasse</option><option>5. Klasse</option><option>6. Klasse</option><option>7. Klasse</option><option>8. Klasse</option><option>9. Klasse</option><option>10. Klasse</option><option>11. Klasse</option><option>12. Klasse</option></select></div>
+        <div class="fg"><label>Schulform <span class="req">*</span></label><select name="schulform" required><option value="" disabled selected>Bitte wählen</option><option>Grundschule</option><option>Sekundarschule</option><option>Gymnasium</option></select></div>
+        <div class="fg full"><label>Fach / Fächer <span class="req">*</span> <span class="opt">(bis zu 3 auswählen)</span></label>
+          <div class="fachgrid" id="fachgrid">
+            <button type="button" class="fachtile" data-fach="Mathematik">Mathematik</button>
+            <button type="button" class="fachtile" data-fach="Deutsch">Deutsch</button>
+            <button type="button" class="fachtile" data-fach="Englisch">Englisch</button>
+            <button type="button" class="fachtile" data-fach="Physik">Physik</button>
+            <button type="button" class="fachtile" data-fach="Chemie">Chemie</button>
+            <button type="button" class="fachtile" data-fach="Biologie">Biologie</button>
+            <button type="button" class="fachtile" data-fach="Latein">Latein</button>
+            <button type="button" class="fachtile" data-fach="Französisch">Französisch</button>          </div>
+          <div class="facherr" id="fachErr">Bitte mindestens ein Fach auswählen.</div>
+        </div>
+        <div class="fg full"><label>Ihre Nachricht</label><textarea name="nachricht" placeholder="Worum geht es? An welchen Wochentagen und zu welchen Uhrzeiten hätte Ihr Kind Zeit?"></textarea></div>
+        <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden"><label>Firma (bitte frei lassen) <input type="text" name="firma" tabindex="-1" autocomplete="off"></label></div>
+        <input type="hidden" name="ts_open" value="">
+      </div>
+      <label class="consent"><input type="checkbox" name="datenschutz" required><span>Ich bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert und verarbeitet werden. Es gelten die <a href="#" data-legal="ds">Datenschutzhinweise</a>. <span class="req">*</span></span></label>
+      <button type="submit" class="btn bp">Anfrage absenden</button>
+      <div class="hint">Ihre Daten werden vertraulich behandelt und ausschließlich für die Bearbeitung Ihrer Anfrage genutzt.</div>
+    </div>
+    <div class="done">
+      <div class="q">„</div>
+      <h3>Vielen Dank!</h3>
+      <p>Ihre Anfrage ist bei uns eingegangen. Eine Bestätigung mit Ihren Angaben haben wir Ihnen per E-Mail geschickt — wir melden uns in Kürze persönlich bei Ihnen.</p>
+    </div>
+  </form>
+</section>
+
+<footer>
+  <div class="wrap ft">
+    <img src="logo-callidus.png" alt="CALLIDUS">
+    <h3>Lieber direkt sprechen?</h3>
+    <p>Rufen Sie uns an oder schreiben Sie eine kurze E-Mail — wir sind persönlich für Sie da.</p>
+    <div class="ci">
+      <a href="tel:+4939155576211">☎ 0391 555 76 211</a>
+      <a href="mailto:info@callidus-magdeburg.de">✉ info@callidus-magdeburg.de</a>
+      <a href="https://instagram.com/callidus_nachhilfe_magdeburg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="15" height="15" style="vertical-align:-2px"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/></svg> Instagram</a>
+    </div>
+    <div class="bot">Nachhilfe in Magdeburg und Wolmirstedt · seit 2019 · <a href="#" data-legal="imp">Impressum</a> · <a href="#" data-legal="ds">Datenschutz</a> · <a href="#" data-legal="agb">AGB</a> · <a href="#" data-legal="wr">Widerrufsbelehrung</a></div>
+  </div>
+</footer>
+
+<a class="ig-fab" href="https://instagram.com/callidus_nachhilfe_magdeburg" target="_blank" rel="noopener" aria-label="Zum Folgen für Nachhilfe Magdeburg">
+  <span class="fab-tip">Zum Folgen für Nachhilfe Magdeburg</span>
+  <svg viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07zm0 1.62c-3.15 0-3.52.01-4.76.07-1.15.05-1.77.24-2.19.4-.55.22-.94.47-1.35.88-.41.41-.66.8-.88 1.35-.16.42-.35 1.04-.4 2.19-.06 1.24-.07 1.61-.07 4.76s.01 3.52.07 4.76c.05 1.15.24 1.77.4 2.19.22.55.47.94.88 1.35.41.41.8.66 1.35.88.42.16 1.04.35 2.19.4 1.24.06 1.61.07 4.76.07s3.52-.01 4.76-.07c1.15-.05 1.77-.24 2.19-.4.55-.22.94-.47 1.35-.88.41-.41.66-.8.88-1.35.16-.42.35-1.04.4-2.19.06-1.24.07-1.61.07-4.76s-.01-3.52-.07-4.76c-.05-1.15-.24-1.77-.4-2.19a3.6 3.6 0 0 0-.88-1.35 3.6 3.6 0 0 0-1.35-.88c-.42-.16-1.04-.35-2.19-.4-1.24-.06-1.61-.07-4.76-.07zm0 2.76a5.46 5.46 0 1 0 0 10.92 5.46 5.46 0 0 0 0-10.92zm0 9a3.54 3.54 0 1 1 0-7.08 3.54 3.54 0 0 1 0 7.08zm5.68-9.23a1.28 1.28 0 1 1-2.56 0 1.28 1.28 0 0 1 2.56 0z"/></svg>
+</a>
+<a class="mail-fab" href="#kontakt" aria-label="Zum E-Mail-Kontaktformular">
+  <span class="fab-tip">Zum Kontaktformular</span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="#F5F1E7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+</a>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger'), navmenu=document.getElementById('navmenu');
+  if(burger){
+    burger.addEventListener('click',function(){
+      var open=navmenu.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open?'true':'false'); burger.textContent=open?'✕':'☰';
+    });
+    navmenu.addEventListener('click',function(e){ if(e.target.tagName==='A'){ navmenu.classList.remove('open'); burger.textContent='☰'; }});
+  }
+  if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window){
+    var sel='.rule,.ey,.sh,.lead2,.promise h2,.promise p,.ocard,.wcell,.step,.sub,.tcard,.loc,.hero h1,.hero .lead,.hero .cta,.hero .art,.why h2,.why .wsub';
+    var els=document.querySelectorAll(sel);
+    els.forEach(function(el){ el.classList.add('is-reveal'); });
+    ['.two','.wgrid','.steps','.subs','.testi','.locs'].forEach(function(gs){
+      document.querySelectorAll(gs).forEach(function(group){
+        Array.prototype.forEach.call(group.children,function(child,i){
+          if(child.classList.contains('is-reveal')) child.style.transitionDelay=(i*70)+'ms';
+        });
+      });
+    });
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    },{threshold:0.1, rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  }
+
+  var WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbzEbv8lv5liFsbU9srDBAtq9JELX62MB85OgnxEEAo4MeTHrM_vqhS0O1NI_Y80wJ7F/exec';
+  var f=document.getElementById('anfrageForm');
+  var fields=f.querySelector('.fields'), done=f.querySelector('.done');
+  var grid=document.getElementById('fachgrid'), fachErr=document.getElementById('fachErr');
+  var klasseSel=f.querySelector('[name="klasse"]'), schulSel=f.querySelector('[name="schulform"]');
+  var SCHULFORM_ALL=['Grundschule','Sekundarschule','Gymnasium'], GRUND_FAECHER=['Mathematik','Deutsch','Englisch'];
+  function setSchulform(list){ while(schulSel.options.length>1) schulSel.remove(1); list.forEach(function(t){ var o=document.createElement('option'); o.text=t; schulSel.add(o); }); }
+  function setFachGrundschule(isGrund){ grid.querySelectorAll('.fachtile').forEach(function(t){ var allowed=!isGrund||GRUND_FAECHER.indexOf(t.getAttribute('data-fach'))>=0; t.style.display=allowed?'':'none'; if(!allowed) t.classList.remove('sel'); }); }
+  function anfrageKlasseRules(){
+    var n=parseInt(klasseSel.value,10)||0, isGrund=n>=1&&n<=4, prev=schulSel.value;
+    if(isGrund){ setSchulform(['Grundschule']); schulSel.value='Grundschule'; }
+    else if(n>=5){ setSchulform(['Sekundarschule','Gymnasium']); schulSel.value=(prev==='Sekundarschule'||prev==='Gymnasium')?prev:''; }
+    else { setSchulform(SCHULFORM_ALL); schulSel.value=(SCHULFORM_ALL.indexOf(prev)>=0)?prev:''; }
+    setFachGrundschule(isGrund);
+  }
+  if(klasseSel) klasseSel.addEventListener('change', anfrageKlasseRules);
+  (function(){ var t=f.querySelector('[name="ts_open"]'); if(t) t.value=String(Date.now()); })();
+  grid.addEventListener('click',function(e){
+    var t=e.target.closest('.fachtile'); if(!t) return;
+    if(!t.classList.contains('sel') && grid.querySelectorAll('.fachtile.sel').length>=3) return;
+    t.classList.toggle('sel'); fachErr.classList.remove('show');
+  });
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!f.checkValidity()){f.reportValidity();return;}
+    var faecher=[];
+    grid.querySelectorAll('.fachtile.sel').forEach(function(t){ faecher.push(t.getAttribute('data-fach')); });
+    if(!faecher.length){ fachErr.classList.add('show'); fachErr.scrollIntoView({behavior:'smooth',block:'center'}); return; }
+    var hp=f.querySelector('[name="firma"]'), tsv=f.querySelector('[name="ts_open"]');
+    var elapsed=(tsv&&tsv.value)?(Date.now()-parseInt(tsv.value,10)):99999;
+    if((hp&&hp.value.trim())||elapsed<2500){ fields.style.display='none'; done.style.display='block'; return; } // Spam
+    var data=new URLSearchParams();
+    ['eltern','standort','email','telefon','kind_vorname','kind_nachname','klasse','schulform','nachricht'].forEach(function(n){
+      var el=f.querySelector('[name="'+n+'"]'); data.append(n, el?el.value:'');
+    });
+    data.append('fach', faecher.join(', '));
+    data.append('datenschutz', f.querySelector('[name="datenschutz"]').checked?'on':'');
+    data.append('firma', hp?hp.value:'');
+    data.append('ts', String(elapsed));
+    if(!WEBAPP_URL){ alert('Vorschau: Das Formular ist fertig gestaltet. Sobald die Tabellen-Verbindung freigeschaltet ist, gehen die Anfragen automatisch in Ihre Liste — und der Kunde erhält eine Bestätigung.'); return; }
+    var btn=f.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent='Wird gesendet …';
+    fetch(WEBAPP_URL,{method:'POST',body:data}).then(show).catch(show);
+    function show(){ fields.style.display='none'; done.style.display='block'; f.scrollIntoView({behavior:'smooth',block:'center'}); }
+  });
+
+  // Buchungsformular Ferienkurse
+  window.BUCHUNG_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbyX6Np_TlQqHnFopR4_NkYVF8c1oKVPUuoHT5rh8Jq4OEhq16WG9kz9vF81f60WYQdz/exec';
+  var bf=document.getElementById('buchungForm');
+  if(bf){
+    var bfields=bf.querySelector('.fields'), bdone=bf.querySelector('.done');
+    var bgrid=document.getElementById('b_fachgrid'), bErr=document.getElementById('b_fachErr');
+    (function(){ var t=bf.querySelector('[name="ts_open"]'); if(t) t.value=String(Date.now()); })();
+    bgrid.addEventListener('click',function(e){
+      var t=e.target.closest('.fachtile'); if(!t) return;
+      if(!t.classList.contains('sel') && bgrid.querySelectorAll('.fachtile.sel').length>=3) return;
+      t.classList.toggle('sel'); bErr.classList.remove('show');
+    });
+    bf.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(!bf.checkValidity()){bf.reportValidity();return;}
+      var fa=[]; bgrid.querySelectorAll('.fachtile.sel').forEach(function(t){fa.push(t.getAttribute('data-fach'));});
+      if(!fa.length){ bErr.classList.add('show'); bErr.scrollIntoView({behavior:'smooth',block:'center'}); return; }
+      var hp=bf.querySelector('[name="firma"]');
+      var tsv=bf.querySelector('[name="ts_open"]');
+      var elapsed=(tsv&&tsv.value)?(Date.now()-parseInt(tsv.value,10)):99999;
+      if((hp&&hp.value.trim())||elapsed<2500){ bfields.style.display='none'; bdone.style.display='block'; return; } // Spam: Fangfeld gefüllt oder zu schnell
+      var data=new URLSearchParams();
+      ['kurs','standort','kind_vorname','kind_nachname','klasse','schulform','anrede','eltern','telefon','email','strasse','plzort','nachricht'].forEach(function(n){
+        var el=bf.querySelector('[name="'+n+'"]'); data.append(n, el?el.value:'');
+      });
+      data.append('fach', fa.join(', '));
+      data.append('datenschutz', bf.querySelector('[name="datenschutz"]').checked?'on':'');
+      data.append('agb', bf.querySelector('[name="agb"]').checked?'on':'');
+      data.append('gelesen', bf.querySelector('[name="gelesen"]').checked?'on':'');
+      data.append('firma', hp?hp.value:'');
+      data.append('ts', String(elapsed));
+      if(!BUCHUNG_WEBAPP_URL){ alert('Vorschau: Das Buchungsformular ist fertig gestaltet. Sobald die Buchungs-Tabelle freigeschaltet ist, landen Buchungen automatisch in der Ferienkurs-Tabelle — Basis für die direkte Rechnung.'); return; }
+      var btn=bf.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent='Wird gebucht …';
+      fetch(BUCHUNG_WEBAPP_URL,{method:'POST',body:data}).then(bshow).catch(bshow);
+      function bshow(){ bfields.style.display='none'; bdone.style.display='block'; bf.scrollIntoView({behavior:'smooth',block:'center'}); }
+    });
+  }
+})();
+</script>
+
+<!-- IMPRESSUM -->
+<div class="lov" id="imp-ov" role="dialog" aria-modal="true" aria-label="Impressum">
+  <div class="lmodal">
+    <div class="lhead"><h2>Impressum</h2><button class="lclose" data-close aria-label="Schließen">&times;</button></div>
+    <div class="lbody">
+      <div class="le">Angaben gemäß § 5 DDG</div>
+      <p><b>CALLIDUS Privatinstitut für Lernförderung e.K.</b><br>Inhaber: Danny Matz<br>Harnackstraße 5<br>39104 Magdeburg</p>
+      <div class="le">Vertreten durch</div>
+      <p>Danny Matz (Inhaber, e.K.)</p>
+      <div class="le">Kontakt</div>
+      <p>Telefon: 0391 555 76 211<br>E-Mail: info@callidus-magdeburg.de</p>
+      <div class="le">Registereintrag</div>
+      <p>Eingetragen im Handelsregister<br>Registergericht: Amtsgericht Stendal<br>Registernummer: HRA 5981</p>
+      <div class="le">Umsatzsteuer</div>
+      <p>Eine Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG liegt nicht vor.<br>Steuernummer: 102/247/13814</p>
+      <div class="le">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</div>
+      <p>Danny Matz<br>Harnackstraße 5<br>39104 Magdeburg</p>
+      <div class="le">Verbraucherstreitbeilegung</div>
+      <p class="small">Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen (§ 36 VSBG).</p>
+      <div class="le">Haftung für Inhalte</div>
+      <p class="small">Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+      <div class="le">Haftung für Links</div>
+      <p class="small">Unser Angebot enthält gegebenenfalls Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+      <div class="le">Urheberrecht</div>
+      <p class="small">Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Soweit die Inhalte nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet und als solche gekennzeichnet.</p>
+    </div>
+  </div>
+</div>
+
+<!-- DATENSCHUTZ -->
+<div class="lov" id="ds-ov" role="dialog" aria-modal="true" aria-label="Datenschutzerklärung">
+  <div class="lmodal">
+    <div class="lhead"><h2>Datenschutzerklärung</h2><button class="lclose" data-close aria-label="Schließen">&times;</button></div>
+    <div class="lbody">
+      <div class="le">1. Verantwortlicher und Kontakt</div>
+      <p>Verantwortlich für die Datenverarbeitung ist: CALLIDUS Privatinstitut für Lernförderung e.K., Inhaber Danny Matz, Harnackstraße 5, 39104 Magdeburg. Telefon: 0391 555 76 211, E-Mail: info@callidus-magdeburg.de. Ein Datenschutzbeauftragter ist gesetzlich nicht zu bestellen; Anfragen zum Datenschutz richten Sie bitte an die vorgenannte Stelle.</p>
+      <div class="le">2. Grundsätze</div>
+      <p>Wir verarbeiten personenbezogene Daten ausschließlich im Einklang mit der Datenschutz-Grundverordnung (DSGVO) und dem Bundesdatenschutzgesetz (BDSG) und nur, soweit dies für die genannten Zwecke erforderlich ist.</p>
+      <div class="le">3. Daten im Rahmen des Fördervertrags</div>
+      <p>Zur Anbahnung, zum Abschluss und zur Durchführung des Vertrags verarbeiten wir: Stammdaten der Eltern bzw. gesetzlichen Vertreter (Name, Anschrift, Telefon, E-Mail); Stammdaten des Kindes (Name, Geburtsdatum, Schule, Klassenstufe, Schulform); schulbezogene Daten (Noten, Beurteilungen, Lernstand, Förderpläne); Vertrags- und Zahlungsdaten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertrag bzw. vorvertragliche Maßnahmen), für die Rechnungs- und Buchführung Art. 6 Abs. 1 lit. c DSGVO. Wir erheben die Daten unmittelbar bei Ihnen. Eine Beschaffung aus Auskunfteien oder eine Bonitätsprüfung findet nicht statt.</p>
+      <div class="le">4. Gesundheits- und Diagnosedaten (besondere Kategorien)</div>
+      <p>Soweit Sie uns freiwillig Diagnosen oder andere Gesundheitsdaten Ihres Kindes mitteilen (z. B. eine Lese-Rechtschreib-Schwäche oder eine Rechenschwäche), handelt es sich um besondere Kategorien personenbezogener Daten nach Art. 9 DSGVO. Wir verarbeiten diese ausschließlich auf Grundlage Ihrer ausdrücklichen Einwilligung (Art. 9 Abs. 2 lit. a DSGVO) und allein zu dem Zweck, die Förderung passgenau auf Ihr Kind abzustimmen. Die Einwilligung ist freiwillig und jederzeit mit Wirkung für die Zukunft widerrufbar; ohne sie verarbeiten wir keine solchen Daten.</p>
+      <div class="le">5. Daten von Minderjährigen</div>
+      <p>Die Förderung richtet sich an Kinder und Jugendliche. Vertragspartner und einwilligende Personen sind die Eltern bzw. gesetzlichen Vertreter. Mit der Mitteilung der Daten bestätigen Sie, dass Sie hierzu berechtigt sind.</p>
+      <div class="le">6. Kontaktaufnahme</div>
+      <p>Wenn Sie uns per Telefon, E-Mail oder Messenger kontaktieren, verarbeiten wir Ihre Angaben zur Bearbeitung der Anfrage (Art. 6 Abs. 1 lit. b DSGVO bei Vertragsbezug, sonst lit. f). Nutzen Sie WhatsApp, werden dabei Daten durch den Anbieter Meta Platforms Ireland Ltd. verarbeitet und auch in die USA übermittelt (siehe Ziffer 11). Als Alternative stehen Ihnen jederzeit Telefon und E-Mail zur Verfügung.</p>
+      <div class="le">7. Kontakt- und Buchungsformulare</div>
+      <p>Über unsere Formulare (Anfrage zum kostenlosen Erstgespräch sowie Ferienkurs-Buchung) erheben wir die von Ihnen angegebenen Daten — u. a. Name der Eltern, E-Mail, Telefon, Vor- und Nachname sowie Klasse und Schulform des Kindes, Fach/Fächer, Standort und Ihre Nachricht, bei einer Buchung zusätzlich die Rechnungsanschrift — zur Bearbeitung Ihrer Anfrage bzw. zur Durchführung und Abrechnung des Kursvertrags (Art. 6 Abs. 1 lit. b DSGVO). Die Daten werden in einer Tabelle gespeichert; die technische Abwicklung (Tabelle, automatische Bestätigungs-E-Mail) erfolgt über Dienste der Google Ireland Ltd. / Google LLC, USA (Google Tabellen, Google Apps Script, Gmail). Dabei kann es zu einer Übermittlung in die USA kommen; Grundlage sind Standardvertragsklauseln (Art. 46) bzw. das EU-US Data Privacy Framework (Art. 45). Speicherung für die Vertragsdauer und im Rahmen gesetzlicher Aufbewahrungsfristen (6/10 Jahre nach HGB/AO).</p>
+      <div class="le">8. Nutzung unserer Website</div>
+      <p>Unsere Website wird beim Anbieter Strato AG (Deutschland) gehostet. Beim Aufruf werden zur Bereitstellung und Sicherheit des Angebots automatisch Server-Logfiles verarbeitet (u. a. IP-Adresse, Datum/Uhrzeit, abgerufene Seite, übertragene Datenmenge); Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO, die Speicherung erfolgt nur kurzzeitig. Soweit wir Werkzeuge zur Reichweitenmessung und statistischen Analyse einsetzen, werden diese ausschließlich mit Ihrer Einwilligung aktiviert (Art. 6 Abs. 1 lit. a DSGVO); dabei können Daten an Anbieter in Drittländern, insbesondere den USA, übermittelt werden. Über die konkret eingesetzten Werkzeuge und Anbieter informieren wir Sie in unserem Cookie-Hinweis, über den Sie Ihre Auswahl jederzeit treffen und widerrufen können. Technisch notwendige Cookies setzen wir ohne Einwilligung.</p>
+      <div class="le">9. Kartendarstellung (Google Maps)</div>
+      <p>Zur Anzeige unserer Standorte binden wir Karten von Google Maps ein (Google Ireland Ltd., Gordon House, Barrow Street, Dublin 4, Irland). Beim Laden einer Karte wird Ihre IP-Adresse an Google übermittelt; dabei kann es zu einer Datenübermittlung in die USA kommen. Rechtsgrundlage ist unser berechtigtes Interesse an einer leichten Auffindbarkeit unserer Standorte (Art. 6 Abs. 1 lit. f DSGVO). Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+      <div class="le">10. Empfänger und Auftragsverarbeiter</div>
+      <p>Innerhalb von CALLIDUS haben nur die mit Förderung und Verwaltung betrauten Personen Zugriff auf Ihre Daten (derzeit der Inhaber, Frau Franziska Hamel sowie ein KI-gestütztes Assistenzsystem, das uns bei der Büroorganisation weisungsgebunden unterstützt). Darüber hinaus geben wir Daten weiter an: Steuerberatung und Finanzbehörden zur Erfüllung steuer- und handelsrechtlicher Pflichten; weisungsgebundene Auftragsverarbeiter nach Art. 28 DSGVO — die Schülerverwaltung Orga Easy, den E-Mail- und Hosting-Anbieter Strato AG (Deutschland), Google (Online-Formulare, Karten und ggf. Reichweitenmessung) sowie den Anbieter unseres KI-Assistenzsystems; bei Kontaktaufnahme über WhatsApp den Anbieter Meta; im Fall des Zahlungsverzugs Inkassodienstleister oder Rechtsanwälte. Mit allen Auftragsverarbeitern bestehen Verträge nach Art. 28 DSGVO.</p>
+      <div class="le">11. Übermittlung in Drittländer</div>
+      <p>Einige Dienstleister verarbeiten Daten außerhalb der EU, insbesondere in den USA — namentlich Google, Meta (WhatsApp) sowie der Anbieter unseres KI-Assistenzsystems. Wir stellen ein angemessenes Datenschutzniveau sicher, entweder durch einen Angemessenheitsbeschluss (Art. 45 DSGVO, z. B. EU-US Data Privacy Framework) oder durch geeignete Garantien wie die EU-Standardvertragsklauseln (Art. 46 DSGVO). Eine Kopie der Garantien erhalten Sie auf Anfrage.</p>
+      <div class="le">12. Soziale Netzwerke</div>
+      <p>Unsere Seite verlinkt auf unser Instagram-Profil. Erst wenn Sie den Link anklicken, werden Sie zu Instagram (Meta Platforms Ireland Ltd.) weitergeleitet; ab dann gelten deren Datenschutzbestimmungen.</p>
+      <div class="le">13. Speicherdauer</div>
+      <p>Wir speichern Ihre Daten für die Dauer des Vertragsverhältnisses; anschließend werden sie gelöscht, soweit keine gesetzlichen Aufbewahrungspflichten entgegenstehen (steuer- und handelsrechtlich i. d. R. 6 bzw. 10 Jahre). Server-Logfiles werden nur kurzzeitig gespeichert. Zu Werbezwecken gespeicherte Daten löschen oder sperren wir, sobald Sie der werblichen Ansprache widersprechen.</p>
+      <div class="le">14. Berechtigte Interessen</div>
+      <p>Soweit wir die Verarbeitung auf Art. 6 Abs. 1 lit. f DSGVO stützen, sind unsere berechtigten Interessen: die Information über eigene Angebote und Nachfragen zur Zufriedenheit, die Durchsetzung offener Forderungen sowie der sichere und stabile Betrieb unserer IT und Website.</p>
+      <div class="le">15. Ihre Rechte</div>
+      <p>Sie haben das Recht auf Auskunft (Art. 15), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch (Art. 21 DSGVO) sowie das Recht, erteilte Einwilligungen jederzeit mit Wirkung für die Zukunft zu widerrufen. Der Verarbeitung zum Zweck der Direktwerbung können Sie jederzeit formlos widersprechen. Sie haben zudem ein Beschwerderecht bei der Aufsichtsbehörde: Landesbeauftragte für den Datenschutz Sachsen-Anhalt, Leiterstraße 9, 39104 Magdeburg.</p>
+      <div class="le">16. Pflicht zur Bereitstellung &amp; automatisierte Entscheidungen</div>
+      <p>Die Stamm- und Vertragsdaten (Ziffer 3) sind für den Vertrag erforderlich; ohne sie können wir den Vertrag nicht erfüllen. Die Mitteilung von Diagnosedaten (Ziffer 4) ist freiwillig. Eine ausschließlich automatisierte Entscheidungsfindung einschließlich Profiling nach Art. 22 DSGVO findet nicht statt.</p>
+      <p class="small">Diese Datenschutzerklärung wird bei Bedarf an geänderte Funktionen oder die Rechtslage angepasst. Stand: Juni 2026.</p>
+    </div>
+  </div>
+</div>
+
+<!-- WIDERRUFSBELEHRUNG -->
+<div class="lov" id="wr-ov" role="dialog" aria-modal="true" aria-label="Widerrufsbelehrung">
+  <div class="lmodal">
+    <div class="lhead"><h2>Widerrufsbelehrung</h2><button class="lclose" data-close aria-label="Schließen">&times;</button></div>
+    <div class="lbody">
+      <div class="le">Widerrufsrecht</div>
+      <p>Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag des Vertragsabschlusses. Um Ihr Widerrufsrecht auszuüben, müssen Sie uns (CALLIDUS Privatinstitut für Lernförderung e.K., Inhaber Danny Matz, Harnackstraße 5, 39104 Magdeburg, Telefon: 0391 555 76 211, E-Mail: info@callidus-magdeburg.de) mittels einer eindeutigen Erklärung (z. B. Brief oder E-Mail) über Ihren Entschluss informieren. Sie können dafür das untenstehende Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist. Zur Wahrung der Frist genügt die rechtzeitige Absendung der Mitteilung.</p>
+      <div class="le">Folgen des Widerrufs</div>
+      <p>Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen unverzüglich, spätestens binnen vierzehn Tagen ab Zugang Ihres Widerrufs, zurückzuzahlen (dasselbe Zahlungsmittel; keine Entgelte). Haben Sie verlangt, dass die Leistung während der Widerrufsfrist beginnt, schulden Sie uns einen angemessenen Betrag für die bis zum Widerruf bereits erbrachten Leistungen (anteilig).</p>
+      <div class="le">Muster-Widerrufsformular</div>
+      <p class="small">(Wenn Sie den Vertrag widerrufen wollen, füllen Sie dieses Formular aus und senden es zurück.)<br><br>An: CALLIDUS Privatinstitut für Lernförderung e.K., Inhaber Danny Matz, Harnackstraße 5, 39104 Magdeburg, E-Mail: info@callidus-magdeburg.de<br><br>Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über die folgende Dienstleistung: __________ (Nachhilfe / Ferienkurs)<br>Bestellt/abgeschlossen am: __________<br>Name: __________<br>Anschrift: __________<br>Unterschrift (nur bei Papier): __________<br>Datum: __________<br>(*) Unzutreffendes streichen.</p>
+    </div>
+  </div>
+</div>
+
+<!-- AGB -->
+<div class="lov" id="agb-ov" role="dialog" aria-modal="true" aria-label="Allgemeine Geschäftsbedingungen">
+  <div class="lmodal">
+    <div class="lhead"><h2>Allgemeine Geschäftsbedingungen (AGB)</h2><button class="lclose" data-close aria-label="Schließen">&times;</button></div>
+    <div class="lbody">
+      <p class="small">CALLIDUS Privatinstitut für Lernförderung e.K., Inhaber Danny Matz, Harnackstraße 5, 39104 Magdeburg — Allgemeine Geschäftsbedingungen (Stand 2026).</p>
+      <div class="le">§ 1 Allgemeines</div>
+      <p>Mit diesem Vertrag wird eine unbefristete und durchgängige Vereinbarung über jene Dienstleistungen abgeschlossen, welche sich aus einer Auswahl aus der Leistungsübersicht ergeben und im Vertrag bestimmt werden. Es handelt sich um Dienstleistungen im Sinne der §§ 611 ff. BGB. Die mit dem Vertragsschluss verbundene Verwaltungsgebühr wird zusammen mit dem ersten Monatsbeitrag als Anmeldegebühr in Höhe von 65,- € fällig. Preiserhöhungen von bis zu maximal 5 % auf die vertraglich vereinbarten Entgelte monatlich zum 01.12. eines Jahres behalten wir uns vor und gelten nach vorheriger rechtzeitiger Ankündigung als vereinbart.</p>
+      <div class="le">§ 2 Gruppenregelung und Stundendauer</div>
+      <p>Der Nachhilfeunterricht findet regelmäßig in fach- und klassenhomogenen Lerngruppen von bis zu drei Schülern statt. Eine reguläre Unterrichtseinheit umfasst 60 Minuten. Die Hausaufgabenbetreuung findet regelmäßig in Lerngruppen von bis zu 6 Schülern statt; eine Betreuungseinheit umfasst 60 Minuten. Das Legasthenie- oder LRS-Training findet grundsätzlich im Rahmen einer Einzelförderung statt; eine Trainingseinheit (TE) umfasst 60 Minuten. Es besteht die Möglichkeit, Trainingspartnerschaften zu organisieren (zwei pädagogisch zueinander passende Kinder werden in einer TE gleichzeitig und ergänzend gefördert); dies ist stets mit den Personensorgeberechtigten abzusprechen. Ein Anspruch auf Beitragsminderung durch eine Trainingspartnerschaft ist ausgeschlossen.</p>
+      <p>Sommer-Ferienkurse dienen der Vor- und Nachbereitung des kommenden bzw. vorangegangenen Schuljahres und finden konzentriert in den letzten drei Ferienwochen statt. Ein Ferienkurs umfasst die Dauer von drei Einzelunterrichtseinheiten. Ein Kind hat Anspruch darauf, gemäß der vertraglich geregelten monatlichen Stundenzahl entsprechend viele Ferienkurse im gleichen Stundenumfang zu besuchen. Die Ferienkurse finden in Lerngruppen von bis zu 6 Schülern statt. Eine Einzelunterrichtseinheit umfasst 60 Minuten.</p>
+      <div class="le">§ 3 Unterrichtsmaterialien</div>
+      <p>Im Nachhilfeunterricht und im Legasthenie- und LRS-Training werden in Ergänzung zu den schulischen Materialien weitgehend Lernmaterialien des Callidus Privatinstitutes verwendet.</p>
+      <div class="le">§ 4 Ferien</div>
+      <p>Der reguläre Nachhilfeunterricht findet in den Ferien (die letzten drei Wochen der Sommerferien ausgenommen), am Rosenmontag und an gesetzlichen Feiertagen nicht statt. In Ausnahmefällen können Ferientage, welche keine gesetzlichen Feiertage sind, zum Ausgleich entschuldigter Fehlstunden genutzt werden; hierfür ist eine Absprache mit der Institutsleitung zwingend erforderlich. Für externe Schüler mit gesonderten Verträgen nur für die Ferien gilt dieser Paragraph nicht; Leistungen erfolgen gemäß Rechnungslegung.</p>
+      <div class="le">§ 4A Sommerferien</div>
+      <p>In den ersten drei Sommerferienwochen findet kein Unterricht statt. Abweichende Angebote unseres Teams sind ausdrückliche Ausnahmen und berechtigen nicht zur gleichen Handhabung im Folgejahr. In den letzten drei Sommerferienwochen finden unsere Intensivkurse statt. Diese sind:</p>
+      <ul>
+        <li><b>für unsere Stammschülerschaft zur Teilnahme offen, aber verbindlich:</b> Mit der fristgerechten Abgabe einer Auswahl der Wunschkurse auf unserer Kursliste (die wir Ihnen vor den Ferien zusenden) schließen die Vertragspartner eine verbindliche Vereinbarung über die Teilnahme. Jeder unserer Schüler kann an diesen Ferienkursen teilnehmen.</li>
+        <li><b>hinsichtlich des Stundenkontingents nicht begrenzt:</b> Unabhängig vom vertraglich geregelten wöchentlichen Stundenumfang können unsere Schüler während der Sommerferienkurse so viele Kurse besuchen, wie sie möchten. Eine Begrenzung besteht lediglich hinsichtlich der Klassenstufe.</li>
+        <li><b>unabhängig vom vertraglich festgelegten Schulfach:</b> Unabhängig vom vertraglich vereinbarten Fach können unsere Schüler innerhalb ihrer Klassenstufe alle Kurse in allen Fächern besuchen.</li>
+      </ul>
+      <p>Die Teilnahme (oder Nicht-Teilnahme) an den Sommerferienkursen erhöht oder mindert den vertraglichen, regelmäßigen Zahlbetrag nicht. Die Sommerferienkurse dienen der Vorbereitung des neuen Schuljahres und der Aufarbeitung entschuldigter Fehlstunden gemäß § 5. Nach den Sommerferien starten alle Schüler mit einem ausgeglichenen Stundenkonto, unabhängig davon, ob sie das Sommerferienangebot genutzt haben oder nicht. Ausnahmen von dieser Regelung sind ausgeschlossen.</p>
+      <div class="le">§ 5 Fehlstunden</div>
+      <p>Nimmt die Schülerin/der Schüler am Nachhilfeunterricht, der Hausaufgabenbetreuung, dem Ferienkurs und/oder dem Legasthenie- oder LRS-Training nicht teil, berechtigt dies nicht zur Minderung der Unterrichtsgebühr. Ersatzstunden für entschuldigte Fehlstunden (Krankheit oder andere begründete Fälle wie Klassenfahrt, Praktikum o. Ä.) können nach Anfrage innerhalb von bis zu 8 Wochen nach dem Versäumnis erteilt werden, sofern der allgemeine Dienstbetrieb dies zulässt und sie bis zum Ablauf des Vertrages tatsächlich durchgeführt werden können. Ein konkreter Anspruch auf die Durchführung von Ersatzstunden besteht nicht. Eine Fehlstunde gilt als entschuldigt, wenn sie mindestens 24 Stunden vor Stundenbeginn abgesagt wurde. Ersatzstunden entschuldigter Termine verfallen mit Ablauf des Vertrages. Die Verrechnung von Ersatzstunden ist ausgeschlossen.</p>
+      <div class="le">§ 6 Zahlungsweise</div>
+      <p>Die Beiträge für die vereinbarten Leistungen sind monatlich im Voraus durch Zahlung auf das im Vertrag angegebene Konto des Callidus Privatinstitutes bis zum 3. Werktag des Monats per Überweisung oder Dauerauftrag fällig. Eine Aussetzung der vertraglichen Leistungen oder der Beitragszahlungen ist unzulässig. Im Falle der Säumnis wird 10 Tage nach dem vereinbarten Zahlungstermin eine Säumnisgebühr in Höhe von 3,- € fällig; darüber hinaus werden die Leistungen bis zum vollständigen Zahlungseingang eingestellt. Für jedes Mahnschreiben wird eine Gebühr in Höhe von 5,00 € erhoben. Nach Ausstellung des 3. Mahnschreibens ist die Institutsleitung bei fortbestehender Säumnis berechtigt, den Vertrag außerordentlich fristlos zu kündigen und die Beiträge der restlichen Vertragslaufzeit (bei befristeten Verträgen) bzw. bis zu 5 Monatsbeiträge (bei unbefristeten Verträgen) einzufordern. Sofern eine Rechnung für die Ferienkurse (externe Schüler) gestellt wurde, gilt das Zahlungsziel der Rechnung.</p>
+      <div class="le">§ 7 Kündigung</div>
+      <p>Die vertragliche Vereinbarung läuft unbefristet. Eine Kündigung durch den Vertragspartner/Leistungsempfänger ist erstmals zum Ablauf der vereinbarten Mindestlaufzeit möglich. Die Kündigung muss schriftlich mit einer zweimonatigen Frist zum Monatsende erfolgen; für die Rechtzeitigkeit ist der Eingang bei der Institutsleitung maßgebend. Die Institutsleitung ist berechtigt, das Vertragsverhältnis aus wichtigen Gründen (z. B. Unterrichts- bzw. Förderungsresistenz, Personalangelegenheiten o. Ä.) fristlos zu beenden; im Übrigen gelten für die ordentliche Kündigung seitens der Institutsleitung die gesetzlichen Bestimmungen zu Dienstverträgen. Wurde Einzelunterricht vereinbart, umfasst dieser mindestens 5 Einzelunterrichtsstunden zur vereinbarten Vergütung, wahrzunehmen innerhalb von 5 Monaten ab Vertragsschluss; § 5 bleibt unberührt, die zweimonatige Kündigungsfrist zum Monatsende ist einzuhalten. <b>Für unsere externen Ferienkurse gilt die Widerrufsbelehrung. Eine Anmeldung ist rechtsverbindlich und kann nur während der Widerrufsfrist widerrufen werden.</b></p>
+      <div class="le">§ 8 Salvatorische Klausel</div>
+      <p>Sollten einzelne Bestimmungen dieses Vertrages ganz oder teilweise unwirksam oder nichtig sein oder werden oder weist dieser Vertrag Lücken auf, so bleiben die übrigen Bestimmungen davon unberührt und gültig. Die Parteien verpflichten sich, anstelle der unwirksamen Bestimmung unter Berücksichtigung von Treu und Glauben eine wirksame Bestimmung zu vereinbaren, die dem Sinn und Zweck der unwirksamen Bestimmung möglichst nahekommt. Entsprechendes gilt für etwaige Lücken.</p>
+      <p class="small">Maßgeblich ist die jeweils zum Zeitpunkt des Vertragsschlusses gültige Fassung dieser AGB. Datenschutzhinweise siehe gesonderte <a href="#" data-legal="ds">Datenschutzerklärung</a>.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bind(ovId, key){
+    var ov=document.getElementById(ovId); if(!ov) return;
+    function open(e){ if(e) e.preventDefault(); ov.classList.add('open'); document.body.style.overflow='hidden'; }
+    function close(){ ov.classList.remove('open'); document.body.style.overflow=''; }
+    document.querySelectorAll('[data-legal="'+key+'"]').forEach(function(l){ l.addEventListener('click', open); });
+    ov.querySelectorAll('[data-close]').forEach(function(x){ x.addEventListener('click', close); });
+    ov.addEventListener('mousedown', function(e){ if(e.target===ov) close(); });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape' && ov.classList.contains('open')) close(); });
+  }
+  bind('imp-ov','imp'); bind('ds-ov','ds'); bind('wr-ov','wr'); bind('agb-ov','agb');
+}());
+</script>
+
+<script>
+(function(){
+  var ov=document.getElementById('buchung-ov'); if(!ov) return;
+  var form=document.getElementById('buchungForm');
+  var sel=form?form.querySelector('[name="kurs"]'):null;
+  var priceEl=document.getElementById('b-price');
+  var badge=document.getElementById('b-plaetze');
+  var soldout=document.getElementById('b-soldout');
+  var bgrid=document.getElementById('b_fachgrid');
+  var standortSel=form?form.querySelector('[name="standort"]'):null;
+  // Kapazität JE STANDORT (Magdeburg / Wolmirstedt). Freie Plätze = Kapazität − gezählte Buchungen.
+  var PLAETZE={ herbst:6, winter:3, oster:3 };
+  var COUNTS=null; // gezählte Buchungen je Typ+Standort, live aus der Tabelle (JSONP)
+  function ladeCounts(done){
+    var url=window.BUCHUNG_WEBAPP_URL; if(!url){ if(done) done(); return; }
+    var cbName='fkC'+(new Date().getTime());
+    var s=document.createElement('script');
+    function cleanup(){ try{ delete window[cbName]; }catch(e){ window[cbName]=undefined; } if(s.parentNode) s.parentNode.removeChild(s); }
+    window[cbName]=function(data){ COUNTS=data||{}; cleanup(); if(done) done(); };
+    s.onerror=function(){ cleanup(); if(done) done(); };
+    s.src=url+(url.indexOf('?')>=0?'&':'?')+'callback='+cbName+'&_='+(new Date().getTime());
+    document.body.appendChild(s);
+  }
+  function kursTyp(v){ v=(v||'').toLowerCase(); if(v.indexOf('prüfungssprint')>=0||v.indexOf('oster')>=0) return 'oster'; if(v.indexOf('herbst')>=0) return 'herbst'; if(v.indexOf('winter')>=0) return 'winter'; return null; }
+  var klasseSel=form?form.querySelector('[name="klasse"]'):null;
+  var schulSel=form?form.querySelector('[name="schulform"]'):null;
+  var KLASSEN_ALL=[];
+  if(klasseSel){ Array.prototype.forEach.call(klasseSel.options, function(o){ if(o.value!=='') KLASSEN_ALL.push(o.text); }); }
+  function isSprint(){ return sel ? /prüfungssprint|oster/i.test(sel.value) : false; }
+  function applySchulform(){
+    if(!isSprint() || !klasseSel || !schulSel) return;
+    if(klasseSel.value.indexOf('10.')===0) schulSel.value='Sekundarschule';
+    else if(klasseSel.value.indexOf('12.')===0) schulSel.value='Gymnasium';
+  }
+  function rebuildKlassen(list, keepVal){
+    while(klasseSel.options.length>1) klasseSel.remove(1);
+    list.forEach(function(t){ var o=document.createElement('option'); o.text=t; klasseSel.add(o); });
+    klasseSel.value = (keepVal && list.indexOf(keepVal)>=0) ? keepVal : '';
+  }
+  function applyKursRules(){
+    if(!klasseSel) return;
+    var prev=klasseSel.value;
+    rebuildKlassen(isSprint() ? ['10. Klasse','12. Klasse'] : KLASSEN_ALL, prev);
+    applySchulform();
+  }
+  function basePreis(v){ v=(v||'').toLowerCase(); if(v.indexOf('prüfungssprint')>=0||v.indexOf('oster')>=0) return 540; if(v.indexOf('herbst')>=0||v.indexOf('winter')>=0) return 510; return 0; }
+  function freiePlaetze(){
+    if(!sel) return null;
+    var typ=kursTyp(sel.value); if(!typ) return null;
+    var cap=PLAETZE[typ];
+    var st=standortSel?String(standortSel.value||'').trim():'';
+    if(!st || !COUNTS || !COUNTS[typ]) return cap;          // ohne Standort/Zähler: Kapazität zeigen
+    var rem=cap-(COUNTS[typ][st]||0);
+    return rem<0?0:rem;
+  }
+  function updPrice(){
+    if(!priceEl||!sel) return;
+    var base=basePreis(sel.value);
+    if(!base){ priceEl.style.display='none'; return; }
+    var cnt=bgrid?bgrid.querySelectorAll('.fachtile.sel').length:0;
+    var txt;
+    if(cnt<=0){ txt='Ihr Vorteilspreis für Ihr Kind beträgt '+base.toLocaleString('de-DE')+' € pro Fach.'; }
+    else if(cnt===1){ txt='Ihr Vorteilspreis für Ihr Kind beträgt '+base.toLocaleString('de-DE')+' €.'; }
+    else { txt='Ihr Vorteilspreis für Ihr Kind beträgt '+(base*cnt).toLocaleString('de-DE')+' € ('+cnt+' Fächer × '+base.toLocaleString('de-DE')+' €).'; }
+    priceEl.textContent=txt; priceEl.style.display='block';
+  }
+  function setDisabled(dis){ if(!form) return; form.querySelectorAll('input,textarea,select,button.fachtile,button[type=submit]').forEach(function(el){ if(el.name!=='kurs' && el.name!=='standort') el.disabled=dis; }); }
+  function updAvail(){
+    var n = freiePlaetze();
+    if(n===null){ if(badge) badge.style.display='none'; if(soldout) soldout.style.display='none'; setDisabled(false); return; }
+    if(n<=0){
+      if(badge){ badge.textContent='Ausgebucht'; badge.className='plaetze full'; badge.style.display='inline-block'; }
+      if(soldout) soldout.style.display='block';
+      if(priceEl) priceEl.style.display='none';
+      setDisabled(true);
+    } else {
+      if(badge){ badge.textContent='Noch '+n+' '+(n===1?'Platz':'Plätze')+' frei'; badge.className='plaetze'+(n<=2?' low':''); badge.style.display='inline-block'; }
+      if(soldout) soldout.style.display='none';
+      setDisabled(false);
+    }
+  }
+  function onKurs(){ updPrice(); updAvail(); applyKursRules(); }
+  function open(kurs){
+    if(kurs && sel){ for(var i=0;i<sel.options.length;i++){ if(sel.options[i].text.indexOf(kurs)>=0){ sel.selectedIndex=i; break; } } }
+    onKurs(); ov.classList.add('open'); document.body.style.overflow='hidden'; ladeCounts(updAvail);
+  }
+  function close(){ ov.classList.remove('open'); document.body.style.overflow=''; }
+  if(sel) sel.addEventListener('change', onKurs);
+  if(standortSel) standortSel.addEventListener('change', updAvail);
+  if(klasseSel) klasseSel.addEventListener('change', applySchulform);
+  if(bgrid) bgrid.addEventListener('click', function(){ updPrice(); });
+  document.querySelectorAll('.fk-card[data-kurs]').forEach(function(c){ c.addEventListener('click', function(){ open(c.getAttribute('data-kurs')); }); });
+  document.querySelectorAll('[data-open="buchung"]').forEach(function(l){ l.addEventListener('click', function(e){ e.preventDefault(); open(); }); });
+  ov.querySelectorAll('[data-close]').forEach(function(x){ x.addEventListener('click', close); });
+  ov.addEventListener('mousedown', function(e){ if(e.target===ov) close(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape' && ov.classList.contains('open')) close(); });
+}());
+</script>
+<script>
+document.querySelectorAll('.mapholder').forEach(function(h){
+  h.addEventListener('click',function(){
+    var f=document.createElement('iframe');
+    f.className='map'; f.src=h.getAttribute('data-src');
+    f.setAttribute('loading','lazy'); f.title=h.getAttribute('data-title')||'Karte'; f.frameBorder='0';
+    h.parentNode.replaceChild(f,h);
+  });
+});
+</script>
+
+</body>
+</html>
