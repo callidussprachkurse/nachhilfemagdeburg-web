@@ -574,7 +574,7 @@ footer .bot a:hover{color:#fff}
   <div class="wrap">
     <div class="locs">
       <div class="loc">
-        <div class="map mapholder" data-src="https://maps.google.com/maps?q=Harnackstra%C3%9Fe%205%2C%2039104%20Magdeburg&amp;z=16&amp;output=embed" data-title="Standort Magdeburg auf Google Maps"><div class="mh-in"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-6.5-5.3-6.5-10A6.5 6.5 0 0 1 18.5 11c0 4.7-6.5 10-6.5 10Z"/><circle cx="12" cy="11" r="2.3"/></svg><p>Karte von Google Maps</p><button type="button" class="map-load">Karte laden</button><span class="mh-note">Beim Laden werden Daten an Google übertragen.</span></div></div>
+        <iframe class="map" src="https://maps.google.com/maps?q=Harnackstra%C3%9Fe%205%2C%2039104%20Magdeburg&amp;z=16&amp;hl=de&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Standort Magdeburg auf Google Maps"></iframe>
         <div class="bd">
           <h3>Magdeburg</h3>
           <p class="addr">Harnackstraße 5 · 39104 Magdeburg</p>
@@ -585,7 +585,7 @@ footer .bot a:hover{color:#fff}
         </div>
       </div>
       <div class="loc">
-        <div class="map mapholder" data-src="https://maps.google.com/maps?q=Rog%C3%A4tzer%20Stra%C3%9Fe%2019%2C%2039326%20Wolmirstedt&amp;z=16&amp;output=embed" data-title="Standort Wolmirstedt auf Google Maps"><div class="mh-in"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-6.5-5.3-6.5-10A6.5 6.5 0 0 1 18.5 11c0 4.7-6.5 10-6.5 10Z"/><circle cx="12" cy="11" r="2.3"/></svg><p>Karte von Google Maps</p><button type="button" class="map-load">Karte laden</button><span class="mh-note">Beim Laden werden Daten an Google übertragen.</span></div></div>
+        <iframe class="map" src="https://maps.google.com/maps?q=Rog%C3%A4tzer%20Stra%C3%9Fe%2019%2C%2039326%20Wolmirstedt&amp;z=16&amp;hl=de&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Standort Wolmirstedt auf Google Maps"></iframe>
         <div class="bd">
           <h3>Wolmirstedt</h3>
           <p class="addr">Rogätzer Straße 19 · 39326 Wolmirstedt</p>
@@ -1016,16 +1016,6 @@ footer .bot a:hover{color:#fff}
   ov.addEventListener('mousedown', function(e){ if(e.target===ov) close(); });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape' && ov.classList.contains('open')) close(); });
 }());
-</script>
-<script>
-document.querySelectorAll('.mapholder').forEach(function(h){
-  h.addEventListener('click',function(){
-    var f=document.createElement('iframe');
-    f.className='map'; f.src=h.getAttribute('data-src');
-    f.setAttribute('loading','lazy'); f.title=h.getAttribute('data-title')||'Karte'; f.frameBorder='0';
-    h.parentNode.replaceChild(f,h);
-  });
-});
 </script>
 
 </body>
