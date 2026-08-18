@@ -720,11 +720,29 @@ footer .bot a:hover{color:#fff}
   function anfrageKlasseRules(){
     var n=parseInt(klasseSel.value,10)||0, isGrund=n>=1&&n<=4, prev=schulSel.value;
     if(isGrund){ setSchulform(['Grundschule']); schulSel.value='Grundschule'; }
+    else if(n>=11){ setSchulform(['Gymnasium']); schulSel.value='Gymnasium'; }
     else if(n>=5){ setSchulform(['Sekundarschule','Gymnasium']); schulSel.value=(prev==='Sekundarschule'||prev==='Gymnasium')?prev:''; }
     else { setSchulform(SCHULFORM_ALL); schulSel.value=(SCHULFORM_ALL.indexOf(prev)>=0)?prev:''; }
     setFachGrundschule(isGrund);
   }
+  function anfrageSchulformRules(){
+    var sf=schulSel.value, n=parseInt(klasseSel.value,10)||0;
+    var opts=klasseSel.querySelectorAll('option');
+    opts.forEach(function(o){
+      var k=parseInt(o.value,10)||0;
+      if(!k){ return; } // Platzhalter-Option behalten
+      if(sf==='Grundschule') o.disabled=o.hidden=(k<1||k>4);
+      else if(sf==='Sekundarschule') o.disabled=o.hidden=(k<5||k>10);
+      else if(sf==='Gymnasium') o.disabled=o.hidden=(k<5||k>12);
+      else { o.disabled=o.hidden=false; }
+    });
+    // Aktuelle Auswahl zurücksetzen falls sie jetzt ungültig ist
+    if(n && klasseSel.options[klasseSel.selectedIndex] && klasseSel.options[klasseSel.selectedIndex].disabled){
+      klasseSel.value=''; setFachGrundschule(false);
+    }
+  }
   if(klasseSel) klasseSel.addEventListener('change', anfrageKlasseRules);
+  if(schulSel) schulSel.addEventListener('change', anfrageSchulformRules);
   (function(){ var t=f.querySelector('[name="ts_open"]'); if(t) t.value=String(Date.now()); })();
   grid.addEventListener('click',function(e){
     var t=e.target.closest('.fachtile'); if(!t) return;
