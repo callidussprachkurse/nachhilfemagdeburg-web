@@ -473,6 +473,15 @@
     <div class="danke-text">Sie haben die Umfrage in diesem Browser schon ausgefüllt. Vielen Dank für Ihre Teilnahme!</div>
   </div>
 
+  <div class="danke" id="nichtgesendet">
+    <div class="danke-icon">📶</div>
+    <div class="danke-titel">Noch nicht angekommen</div>
+    <div class="danke-text">Ihre Antworten konnten gerade nicht übermittelt werden — meist blockiert ein Werbe&#8209;/Tracking&#8209;Blocker oder ein Firmennetz die Verbindung.<br><br>Sie sind in diesem Browser zwischengespeichert und werden automatisch nachgereicht, sobald Sie diese Seite noch einmal öffnen. Wenn Sie nicht warten möchten, füllen Sie die Umfrage bitte einmal hier aus:</div>
+    <div class="teilen-box">
+      <a class="btn-teilen" style="background:#1e4632" href="https://imac-von-callidus.tail200fa5.ts.net/umfrage">Direkt ausfüllen</a>
+    </div>
+  </div>
+
   <div class="danke" id="danke">
     <div class="danke-icon">🙏</div>
     <div class="danke-titel">Vielen Dank!</div>
@@ -684,10 +693,20 @@ function warteschlangeNachreichen() {
 }
 
 function zeigeDanke() {
+  zeigeAbschluss('danke');
+}
+
+// Wenn die Antwort nicht rausging, sagen wir das auch. Frueher erschien
+// "Vielen Dank!", obwohl nichts angekommen war - niemand haette es gemerkt.
+function zeigeNichtGesendet() {
+  zeigeAbschluss('nichtgesendet');
+}
+
+function zeigeAbschluss(id) {
   document.getElementById('s5').classList.remove('aktiv');
   document.querySelector('.progress-wrap').style.display = 'none';
   merkeTeilnahme();
-  document.getElementById('danke').classList.add('aktiv');
+  document.getElementById(id).classList.add('aktiv');
   window.scrollTo(0, 0);
 }
 
@@ -705,13 +724,15 @@ function absenden() {
     }
     if (!resp.ok) {
       var w = warteschlangeLesen(); w.push(antworten); warteschlangeSchreiben(w);
+      zeigeNichtGesendet();
+      return;
     }
     zeigeDanke();
   }).catch(function() {
-    // Server gerade nicht erreichbar: Antwort merken und spaeter nachreichen,
-    // damit sie nicht still verlorengeht.
+    // Nicht durchgekommen: Antwort merken, spaeter nachreichen - und es dem
+    // Menschen sagen, statt ihm faelschlich "gespeichert" zu melden.
     var w = warteschlangeLesen(); w.push(antworten); warteschlangeSchreiben(w);
-    zeigeDanke();
+    zeigeNichtGesendet();
   });
 }
 
