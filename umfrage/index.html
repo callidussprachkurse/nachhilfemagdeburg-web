@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Befragung abgeschlossen – CALLIDUS</title>
+<style>
+  :root{
+    --gruen:#1e4632; --gold:#c9a84c; --bg:#f5f4f0;
+    --weiss:#fff; --text:#1a1a1a; --gedaempft:#6b7280; --rand:#e5e7eb;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    background:var(--bg);color:var(--text);
+    min-height:100vh;display:flex;flex-direction:column;
+  }
+  .header{background:var(--gruen);padding:20px 24px 18px;text-align:center}
+  .header-logo{
+    font-size:11px;letter-spacing:3px;text-transform:uppercase;
+    color:var(--gold);margin-bottom:6px;
+  }
+  .header-titel{font-size:18px;font-weight:600;color:#fff;line-height:1.3}
+  .goldlinie{height:3px;background:var(--gold)}
+  main{
+    flex:1;display:flex;align-items:center;justify-content:center;
+    padding:40px 20px;
+  }
+  .karte{
+    background:var(--weiss);border:1px solid var(--rand);border-radius:16px;
+    padding:44px 30px 38px;text-align:center;max-width:460px;width:100%;
+    box-shadow:0 2px 18px rgba(0,0,0,.06);
+  }
+  .haken{
+    width:58px;height:58px;margin:0 auto 20px;border-radius:50%;
+    background:var(--gruen);color:var(--gold);
+    display:flex;align-items:center;justify-content:center;font-size:28px;
+  }
+  h1{font-size:21px;font-weight:600;margin-bottom:12px;line-height:1.35}
+  p{color:var(--gedaempft);line-height:1.65;font-size:15px}
+  p + p{margin-top:14px}
+  .zurueck{
+    display:inline-block;margin-top:28px;padding:13px 26px;
+    background:var(--gruen);color:#fff;text-decoration:none;
+    border-radius:9px;font-size:15px;font-weight:500;
+  }
+  .zurueck:hover,.zurueck:focus{background:#2d6147}
+  footer{
+    text-align:center;padding:0 20px 34px;
+    font-size:12.5px;color:var(--gedaempft);line-height:1.7;
+  }
+  footer a{color:var(--gedaempft)}
+  @media (max-width:400px){
+    .karte{padding:34px 22px 30px}
+    h1{font-size:19px}
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-logo">Callidus Bildung</div>
+    <div class="header-titel">Bildung im Wandel</div>
+  </div>
+  <div class="goldlinie"></div>
+
+  <main>
+    <div class="karte">
+      <div class="haken">&#10003;</div>
+      <h1>Die Befragung ist abgeschlossen</h1>
+      <p>Vielen Dank an alle, die sich die Zeit genommen und teilgenommen haben.</p>
+      <p>Ihre Antworten wurden anonym erfasst. Es werden keine weiteren Antworten mehr entgegengenommen.</p>
+      <a class="zurueck" href="https://callidus-magdeburg.de/">Zu CALLIDUS</a>
+    </div>
+  </main>
+
+  <footer>
+    CALLIDUS Privatinstitut für Lernförderung e.K. · Harnackstraße 5 · 39104 Magdeburg<br>
+    <a href="https://callidus-magdeburg.de/">Impressum &amp; Datenschutz</a>
+  </footer>
+</body>
+</html>
