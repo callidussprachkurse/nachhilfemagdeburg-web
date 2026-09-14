@@ -452,7 +452,7 @@ footer .bot a:hover{color:#fff}
     <div class="subs">
       <div class="sub">Mathematik</div><div class="sub">Deutsch</div><div class="sub">Englisch</div>
       <div class="sub">Physik</div><div class="sub">Chemie</div><div class="sub">Biologie</div>
-      <div class="sub">Latein</div><div class="sub">Französisch</div><a class="sub sub-it" href="https://callidus-sprachkurse.de" target="_blank" rel="noopener">Italienisch<span class="star">★</span><span class="it-tip">Zu unseren CALLIDUS Sprachkursen →</span></a>
+      <div class="sub">Latein</div><a class="sub sub-it" href="https://callidus-sprachkurse.de" target="_blank" rel="noopener">Italienisch<span class="star">★</span><span class="it-tip">Zu unseren CALLIDUS Sprachkursen →</span></a>
     </div>
     <p class="lead2" style="margin-top:24px">… und weitere Fächer auf Anfrage.</p>
   </div>
@@ -639,8 +639,7 @@ footer .bot a:hover{color:#fff}
             <button type="button" class="fachtile" data-fach="Physik">Physik</button>
             <button type="button" class="fachtile" data-fach="Chemie">Chemie</button>
             <button type="button" class="fachtile" data-fach="Biologie">Biologie</button>
-            <button type="button" class="fachtile" data-fach="Latein">Latein</button>
-            <button type="button" class="fachtile" data-fach="Französisch">Französisch</button>          </div>
+            <button type="button" class="fachtile" data-fach="Latein">Latein</button>          </div>
           <div class="facherr" id="fachErr">Bitte mindestens ein Fach auswählen.</div>
         </div>
         <div class="fg full"><label>Ihre Nachricht</label><textarea name="nachricht" placeholder="Worum geht es? An welchen Wochentagen und zu welchen Uhrzeiten hätte Ihr Kind Zeit?"></textarea></div>
@@ -720,29 +719,11 @@ footer .bot a:hover{color:#fff}
   function anfrageKlasseRules(){
     var n=parseInt(klasseSel.value,10)||0, isGrund=n>=1&&n<=4, prev=schulSel.value;
     if(isGrund){ setSchulform(['Grundschule']); schulSel.value='Grundschule'; }
-    else if(n>=11){ setSchulform(['Gymnasium']); schulSel.value='Gymnasium'; }
     else if(n>=5){ setSchulform(['Sekundarschule','Gymnasium']); schulSel.value=(prev==='Sekundarschule'||prev==='Gymnasium')?prev:''; }
     else { setSchulform(SCHULFORM_ALL); schulSel.value=(SCHULFORM_ALL.indexOf(prev)>=0)?prev:''; }
     setFachGrundschule(isGrund);
   }
-  function anfrageSchulformRules(){
-    var sf=schulSel.value, n=parseInt(klasseSel.value,10)||0;
-    var opts=klasseSel.querySelectorAll('option');
-    opts.forEach(function(o){
-      var k=parseInt(o.value,10)||0;
-      if(!k){ return; } // Platzhalter-Option behalten
-      if(sf==='Grundschule') o.disabled=o.hidden=(k<1||k>4);
-      else if(sf==='Sekundarschule') o.disabled=o.hidden=(k<5||k>10);
-      else if(sf==='Gymnasium') o.disabled=o.hidden=(k<5||k>12);
-      else { o.disabled=o.hidden=false; }
-    });
-    // Aktuelle Auswahl zurücksetzen falls sie jetzt ungültig ist
-    if(n && klasseSel.options[klasseSel.selectedIndex] && klasseSel.options[klasseSel.selectedIndex].disabled){
-      klasseSel.value=''; setFachGrundschule(false);
-    }
-  }
   if(klasseSel) klasseSel.addEventListener('change', anfrageKlasseRules);
-  if(schulSel) schulSel.addEventListener('change', anfrageSchulformRules);
   (function(){ var t=f.querySelector('[name="ts_open"]'); if(t) t.value=String(Date.now()); })();
   grid.addEventListener('click',function(e){
     var t=e.target.closest('.fachtile'); if(!t) return;
