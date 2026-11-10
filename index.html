@@ -780,6 +780,13 @@ footer .bot a:hover{color:#fff}
     data.append('firma', hp?hp.value:'');
     data.append('ts', String(elapsed));
     if(!WEBAPP_URL){ alert('Vorschau: Das Formular ist fertig gestaltet. Sobald die Tabellen-Verbindung freigeschaltet ist, gehen die Anfragen automatisch in Ihre Liste — und der Kunde erhält eine Bestätigung.'); return; }
+    try{ var mk=f.querySelector('[name="marketing"]'); if(mk&&mk.checked){
+      var nl=new URLSearchParams();
+      nl.append('email', f.querySelector('[name="email"]').value);
+      nl.append('name', f.querySelector('[name="eltern"]').value);
+      nl.append('source','website-magdeburg');
+      fetch('https://imac-von-callidus.tail200fa5.ts.net/nl/signup',{method:'POST',body:nl}).catch(function(){});
+    } }catch(e){}
     var btn=f.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent='Wird gesendet …';
     fetch(WEBAPP_URL,{method:'POST',body:data}).then(show).catch(show);
     function show(){ fields.style.display='none'; done.style.display='block'; f.scrollIntoView({behavior:'smooth',block:'center'}); }
