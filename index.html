@@ -128,6 +128,10 @@ section{padding:108px 0}
 
 /* ABLAUF */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:34px;margin-top:58px}
+.steps--empf{grid-template-columns:repeat(3,1fr);max-width:900px;margin-left:auto;margin-right:auto}
+.steps--empf .step{text-align:center}
+.steps--empf .step:after{display:none}
+@media(max-width:900px){.steps--empf{grid-template-columns:1fr}}
 .step{position:relative}
 .step .num{font-family:'Fraunces',serif;font-size:30px;font-weight:500;font-style:italic;color:var(--brass)}
 .step h3{font-size:22px;font-weight:500;margin:6px 0 8px}
@@ -334,6 +338,7 @@ footer .bot a:hover{color:#fff}
       <a href="#faecher">Fächer</a>
       <a href="#ferienkurse">Ferienkurse</a>
       <a href="#standorte">Standorte</a>
+      <a href="#empfehlung">Weiterempfehlen</a>
       <a class="btn bp" href="#kontakt">Erstgespräch</a>
     </div>
     <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false">☰</button>
@@ -577,6 +582,27 @@ footer .bot a:hover{color:#fff}
   </div>
 </section>
 
+<section id="empfehlung">
+  <div class="wrap center">
+    <div class="rule"></div>
+    <div class="ey">Empfehlungsprogramm</div>
+    <div class="sh">Zufrieden? <em class="bz">Erzählen Sie es weiter!</em></div>
+    <p class="lead2">Die meisten Familien kommen über eine persönliche Empfehlung zu uns — das ist immer unser größtes Lob. Wenn Ihr Kind bei uns gut aufgehoben ist, erzählen Sie anderen Eltern davon — als Dankeschön erhalten Sie von uns bis zu 140&nbsp;€.</p>
+  </div>
+  <div class="wrap">
+    <div class="steps steps--empf">
+      <div class="step"><div class="num">01</div><h3>Sie empfehlen uns</h3><p>Sie erzählen einer Familie, deren Kind Unterstützung gebrauchen könnte, von CALLIDUS.</p></div>
+      <div class="step"><div class="num">02</div><h3>Die Familie meldet sich</h3><p>Beim kostenlosen Erstgespräch nennt die Familie einfach Ihren Namen.</p></div>
+      <div class="step"><div class="num">03</div><h3>Wir sagen Danke</h3><p>Sobald das Kind bei uns startet, überweisen wir Ihnen 140&nbsp;€ als Dankeschön.</p></div>
+    </div>
+    <div class="center" style="margin-top:40px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a class="btn bp" href="#kontakt">Jetzt Kontakt aufnehmen</a>
+      <a class="btn" style="border-color:var(--brass);color:var(--forest)" href="#" data-legal="tb">Zu den Teilnahmebedingungen</a>
+    </div>
+    <p style="max-width:720px;margin:30px auto 0;text-align:center;color:var(--muted);font-size:15px;line-height:1.62">Sie sind keine aktive CALLIDUS-Familie mehr, möchten aber trotzdem am Programm teilnehmen? Auch ehemalige CALLIDUS-Familien und nahestehende Personen können empfehlen und erhalten 70&nbsp;€ je erfolgreicher Empfehlung — sprechen Sie uns einfach an.</p>
+  </div>
+</section>
+
 <section id="standorte">
   <div class="wrap center">
     <div class="rule"></div>
@@ -642,11 +668,14 @@ footer .bot a:hover{color:#fff}
             <button type="button" class="fachtile" data-fach="Latein">Latein</button>          </div>
           <div class="facherr" id="fachErr">Bitte mindestens ein Fach auswählen.</div>
         </div>
+        <div class="fg"><label>Auf Empfehlung von <span class="req">*</span></label><select name="empfehlung" required><option value="" disabled selected>Bitte wählen</option><option>Freunde/Bekannte</option><option>Schule</option><option>Familie</option><option>Wir haben selbst gesucht</option></select></div>
+        <div class="fg"><label>Name der empfehlenden Person <span class="opt">(optional)</span></label><input name="empfehlung_name" placeholder="Wen dürfen wir grüßen?"></div>
         <div class="fg full"><label>Ihre Nachricht</label><textarea name="nachricht" placeholder="Worum geht es? An welchen Wochentagen und zu welchen Uhrzeiten hätte Ihr Kind Zeit?"></textarea></div>
         <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden"><label>Firma (bitte frei lassen) <input type="text" name="firma" tabindex="-1" autocomplete="off"></label></div>
         <input type="hidden" name="ts_open" value="">
       </div>
       <label class="consent"><input type="checkbox" name="datenschutz" required><span>Ich bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert und verarbeitet werden. Es gelten die <a href="#" data-legal="ds">Datenschutzhinweise</a>. <span class="req">*</span></span></label>
+      <label class="consent"><input type="checkbox" name="marketing"><span>Halten Sie mich über passende Angebote für mein Kind auf dem Laufenden. <span class="opt">(freiwillig, jederzeit widerrufbar)</span></span></label>
       <button type="submit" class="btn bp">Anfrage absenden</button>
       <div class="hint">Ihre Daten werden vertraulich behandelt und ausschließlich für die Bearbeitung Ihrer Anfrage genutzt.</div>
     </div>
@@ -740,11 +769,12 @@ footer .bot a:hover{color:#fff}
     var elapsed=(tsv&&tsv.value)?(Date.now()-parseInt(tsv.value,10)):99999;
     if((hp&&hp.value.trim())||elapsed<2500){ fields.style.display='none'; done.style.display='block'; return; } // Spam
     var data=new URLSearchParams();
-    ['eltern','standort','email','telefon','kind_vorname','kind_nachname','klasse','schulform','nachricht'].forEach(function(n){
+    ['eltern','standort','email','telefon','kind_vorname','kind_nachname','klasse','schulform','empfehlung','empfehlung_name','nachricht'].forEach(function(n){
       var el=f.querySelector('[name="'+n+'"]'); data.append(n, el?el.value:'');
     });
     data.append('fach', faecher.join(', '));
     data.append('datenschutz', f.querySelector('[name="datenschutz"]').checked?'on':'');
+    data.append('marketing', f.querySelector('[name="marketing"]').checked?'on':'');
     data.append('firma', hp?hp.value:'');
     data.append('ts', String(elapsed));
     if(!WEBAPP_URL){ alert('Vorschau: Das Formular ist fertig gestaltet. Sobald die Tabellen-Verbindung freigeschaltet ist, gehen die Anfragen automatisch in Ihre Liste — und der Kunde erhält eine Bestätigung.'); return; }
@@ -915,6 +945,47 @@ footer .bot a:hover{color:#fff}
   </div>
 </div>
 
+<!-- TEILNAHMEBEDINGUNGEN EMPFEHLUNG -->
+<div class="lov" id="tb-ov" role="dialog" aria-modal="true" aria-label="Teilnahmebedingungen Empfehlungsprogramm">
+  <div class="lmodal">
+    <div class="lhead"><h2>Teilnahmebedingungen — Empfehlungsprogramm</h2><button class="lclose" data-close aria-label="Schließen">&times;</button></div>
+    <div class="lbody">
+      <p class="small">CALLIDUS Privatinstitut für Lernförderung e.K., Inhaber Danny Matz, Harnackstraße 5, 39104 Magdeburg — Teilnahmebedingungen „CALLIDUS empfiehlt CALLIDUS" (Stand November 2026).</p>
+      <p>Vielen Dank, dass Sie CALLIDUS weiterempfehlen. Für jede erfolgreiche Empfehlung bedanken wir uns mit einer Prämie. Dafür gelten die folgenden Bedingungen:</p>
+      <div class="le">1. Prämie</div>
+      <ul>
+        <li>Aktive CALLIDUS-Familien erhalten <b>140,00 €</b> je erfolgreich geworbenem Kind.</li>
+        <li>Externe Empfehler (z. B. ehemalige CALLIDUS-Familien oder nahestehende Personen) erhalten <b>70,00 €</b> je erfolgreich geworbenem Kind.</li>
+        <li>Die Auszahlung erfolgt jeweils per Überweisung.</li>
+      </ul>
+      <div class="le">2. Wann eine Empfehlung erfolgreich ist</div>
+      <ul>
+        <li>Das empfohlene Kind nimmt neu bei uns die Nachhilfe auf und schließt einen regulären Nachhilfevertrag.</li>
+        <li>Die Empfehlung wird uns im Beratungsgespräch genannt.</li>
+        <li>Die Prämie wird nach der <b>zweiten gezahlten Monatsrate</b> des empfohlenen Kindes ausgezahlt.</li>
+      </ul>
+      <div class="le">3. Wer empfehlen darf</div>
+      <ul>
+        <li>Jede aktive CALLIDUS-Familie sowie externe Empfehler. Pro empfohlenem Kind wird genau eine Prämie gewährt. Die Zahl der Empfehlungen ist nicht begrenzt.</li>
+      </ul>
+      <div class="le">4. Ausschlüsse</div>
+      <ul>
+        <li>Kein Bonus für die Anmeldung eigener weiterer Kinder oder von Geschwistern.</li>
+        <li>Wer in den letzten <b>zwölf Monaten</b> bereits bei CALLIDUS gelernt hat, gilt nicht als neue Empfehlung.</li>
+        <li>Die Prämie entfällt, wenn das empfohlene Kind vor der zweiten Rate wieder kündigt.</li>
+      </ul>
+      <div class="le">5. Auszahlung &amp; Datenschutz</div>
+      <ul>
+        <li>Externe Empfehler nennen uns für die Überweisung ihren Namen und ihre IBAN. Diese Angaben verwenden wir ausschließlich zur Auszahlung der Prämie und löschen sie anschließend. Eine Weitergabe an Dritte erfolgt nicht.</li>
+      </ul>
+      <div class="le">6. Sonstiges</div>
+      <ul>
+        <li>Die Prämie ist eine freiwillige Leistung; ein Rechtsanspruch besteht nicht. CALLIDUS kann das Programm jederzeit anpassen oder beenden. Es gilt deutsches Recht.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 <script>
 (function(){
   function bind(ovId, key){
@@ -926,7 +997,7 @@ footer .bot a:hover{color:#fff}
     ov.addEventListener('mousedown', function(e){ if(e.target===ov) close(); });
     document.addEventListener('keydown', function(e){ if(e.key==='Escape' && ov.classList.contains('open')) close(); });
   }
-  bind('imp-ov','imp'); bind('ds-ov','ds'); bind('wr-ov','wr'); bind('agb-ov','agb');
+  bind('imp-ov','imp'); bind('ds-ov','ds'); bind('wr-ov','wr'); bind('agb-ov','agb'); bind('tb-ov','tb');
 }());
 </script>
 
