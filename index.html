@@ -748,7 +748,8 @@ footer .bot a:hover{color:#fff}
   function anfrageKlasseRules(){
     var n=parseInt(klasseSel.value,10)||0, isGrund=n>=1&&n<=4, prev=schulSel.value;
     if(isGrund){ setSchulform(['Grundschule']); schulSel.value='Grundschule'; }
-    else if(n>=5){ setSchulform(['Sekundarschule','Gymnasium']); schulSel.value=(prev==='Sekundarschule'||prev==='Gymnasium')?prev:''; }
+    else if(n>=5&&n<=10){ setSchulform(['Sekundarschule','Gymnasium']); schulSel.value=(prev==='Sekundarschule'||prev==='Gymnasium')?prev:''; }
+    else if(n>=11){ setSchulform(['Gymnasium']); schulSel.value='Gymnasium'; }
     else { setSchulform(SCHULFORM_ALL); schulSel.value=(SCHULFORM_ALL.indexOf(prev)>=0)?prev:''; }
     setFachGrundschule(isGrund);
   }
@@ -790,6 +791,16 @@ footer .bot a:hover{color:#fff}
     var bfields=bf.querySelector('.fields'), bdone=bf.querySelector('.done');
     var bgrid=document.getElementById('b_fachgrid'), bErr=document.getElementById('b_fachErr');
     (function(){ var t=bf.querySelector('[name="ts_open"]'); if(t) t.value=String(Date.now()); })();
+    var bKlasse=bf.querySelector('[name="klasse"]'), bSchul=bf.querySelector('[name="schulform"]');
+    function bSetSchul(list){ while(bSchul.options.length>1) bSchul.remove(1); list.forEach(function(t){ var o=document.createElement('option'); o.text=t; bSchul.add(o); }); }
+    function bKlasseRules(){
+      var n=parseInt(bKlasse.value,10)||0, prev=bSchul.value;
+      if(n>=1&&n<=4){ bSetSchul(['Grundschule']); bSchul.value='Grundschule'; }
+      else if(n>=5&&n<=10){ bSetSchul(['Sekundarschule','Gymnasium']); bSchul.value=(prev==='Sekundarschule'||prev==='Gymnasium')?prev:''; }
+      else if(n>=11){ bSetSchul(['Gymnasium']); bSchul.value='Gymnasium'; }
+      else { bSetSchul(['Grundschule','Sekundarschule','Gymnasium']); bSchul.value=(['Grundschule','Sekundarschule','Gymnasium'].indexOf(prev)>=0)?prev:''; }
+    }
+    if(bKlasse&&bSchul) bKlasse.addEventListener('change', bKlasseRules);
     bgrid.addEventListener('click',function(e){
       var t=e.target.closest('.fachtile'); if(!t) return;
       if(!t.classList.contains('sel') && bgrid.querySelectorAll('.fachtile.sel').length>=3) return;
@@ -1142,8 +1153,6 @@ footer .bot a:hover{color:#fff}
   if(cs) cs.addEventListener('click',function(e){ e.preventDefault(); show(); });
 })();
 </script>
-<script>/* md-count */(function(){try{var r="";if(document.referrer){try{r=new URL(document.referrer).host}catch(e){}}
-new Image().src="https://imac-von-callidus.tail200fa5.ts.net/z?p=/md"+encodeURIComponent(location.pathname)+"&r="+encodeURIComponent(r)+"&t="+Date.now();}catch(e){}})();</script>
 
 </body>
 </html>
