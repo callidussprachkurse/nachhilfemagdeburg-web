@@ -773,6 +773,7 @@ footer .bot a:hover{color:#fff}
     ['eltern','standort','email','telefon','kind_vorname','kind_nachname','klasse','schulform','empfehlung','empfehlung_name','nachricht'].forEach(function(n){
       var el=f.querySelector('[name="'+n+'"]'); data.append(n, el?el.value:'');
     });
+    if((parseInt(f.querySelector('[name="klasse"]').value,10)||0)>=11){ data.set('schulform','Gymnasium'); }
     data.append('fach', faecher.join(', '));
     data.append('datenschutz', f.querySelector('[name="datenschutz"]').checked?'on':'');
     data.append('marketing', f.querySelector('[name="marketing"]').checked?'on':'');
@@ -819,6 +820,7 @@ footer .bot a:hover{color:#fff}
       ['kurs','standort','kind_vorname','kind_nachname','klasse','schulform','anrede','eltern','telefon','email','strasse','plzort','nachricht'].forEach(function(n){
         var el=bf.querySelector('[name="'+n+'"]'); data.append(n, el?el.value:'');
       });
+      if((parseInt(bf.querySelector('[name="klasse"]').value,10)||0)>=11){ data.set('schulform','Gymnasium'); }
       data.append('fach', fa.join(', '));
       data.append('datenschutz', bf.querySelector('[name="datenschutz"]').checked?'on':'');
       data.append('agb', bf.querySelector('[name="agb"]').checked?'on':'');
